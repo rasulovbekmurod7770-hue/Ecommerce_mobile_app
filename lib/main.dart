@@ -6,6 +6,8 @@ import 'package:clothing_app_ui/features/notifications/pages/no_notification_scr
 import 'package:clothing_app_ui/features/notifications/pages/notification_exist_page.dart';
 import 'package:clothing_app_ui/features/orders/pages/no_orders_screen.dart';
 import 'package:clothing_app_ui/features/orders/pages/orders_exist_screen.dart';
+import 'package:clothing_app_ui/features/product%20page/product_details_screen.dart';
+import 'package:clothing_app_ui/features/search_filter/search_screen.dart';
 
 import 'package:flutter/material.dart';
 
@@ -40,7 +42,7 @@ class MyApp extends StatelessWidget {
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
       debugShowCheckedModeBanner: false,
-      home:Categories()
+      home:ProductDetailsScreen()
     );
   }
 }
