@@ -1,5 +1,6 @@
 import 'package:clothing_app_ui/core/constants/app_colors.dart';
 import 'package:clothing_app_ui/core/constants/app_text_styles.dart';
+import 'package:clothing_app_ui/features/home/pages/Hoodies_page.dart';
 import 'package:clothing_app_ui/features/home/pages/home_page.dart';
 import 'package:clothing_app_ui/features/home/widgets/listtile.dart';
 import 'package:clothing_app_ui/features/home/widgets/padding.dart';
@@ -39,7 +40,7 @@ class Categories extends StatelessWidget {
             Column(
               spacing: 8,
               children: [
-                ListtileW(image: "assets/images/categoryimage1.png", text: "Hoodies", widget: HomePage(),),
+                ListtileW(image: "assets/images/categoryimage1.png", text: "Hoodies", widget: HoodiesPage(),),
                 ListtileW(image: "assets/images/categoryimage2.png", text: "Accessories", widget: HomePage()), 
                 ListtileW(image: "assets/images/categorimage3.png", text: "Shorts", widget: HomePage()), 
                 ListtileW(image: "assets/images/categoryimage4.png", text: "Shoes", widget: HomePage()), 
