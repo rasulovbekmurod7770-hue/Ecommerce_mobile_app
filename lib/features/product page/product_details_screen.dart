@@ -22,9 +22,22 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
   }
 
   int productCount = 1;
+  Map<String, Color> colors = {
+    "Orange": Colors.orange,
+    "Black": Colors.black,
+    "Red": Colors.red,
+    "Yellow": Colors.yellow,
+    "Blue": Colors.blue,
+  };
+
+  bool ontapped = true;
+
+  List<String> sizes = ["S", "M", "L", "XL", "XXL"];
 
   @override
   Widget build(BuildContext context) {
+    final keys = colors.keys.toList();
+    final values = colors.values.toList();
     return Scaffold(
       backgroundColor: AppColors.backgroundLight,
       body: SingleChildScrollView(
@@ -126,43 +139,251 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                   children: [
                     Text("Size", style: AppTextStyles.secondaryTextBlack),
                     SizedBox(
-                      height: .infinity,
-                      width: 100,
-                      child: DropdownButtonFormField(
-                        decoration: InputDecoration(
-                          // contentPadding: EdgeInsets.only(bottom: 30),
-                          fillColor: Colors.transparent,
-                          filled: true,
-                          border: OutlineInputBorder(
-                            borderRadius: .circular(100),
-                            borderSide: .none,
-                          ),
-                        ),
+                      height: 56,
+                      width: 50,
+                      child: InkWell(
+                        borderRadius: .circular(100),
+                        onTap: () {
+                          showModalBottomSheet(
+                            backgroundColor: AppColors.backgroundLight,
+                            context: context,
+                            shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.vertical(
+                                top: Radius.circular(16),
+                              ),
+                            ),
+                            builder: (BuildContext context) {
+                              return SizedBox(
+                                height: MediaQuery.sizeOf(context).height / 2,
+                                child: SingleChildScrollView(
+                                  scrollDirection: .vertical,
+                                  child: padded(
+                                    Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment: .center,
+                                      children: [
+                                        const SizedBox(height: 16),
+                                        Row(
+                                          mainAxisAlignment: .spaceBetween,
+                                          mainAxisSize: .max,
+                                          children: [
+                                            SizedBox(width: 24),
+                                            Text(
+                                              "Colors",
+                                              style: TextStyle(
+                                                fontSize: 24,
+                                                fontWeight: .w700,
+                                                color: AppColors.colorBlack,
+                                              ),
+                                            ),
+                                            IconButton(
+                                              onPressed: () {
+                                                Navigator.pop(context);
+                                              },
+                                              icon: Icon(Icons.check, size: 24),
+                                            ),
+                                          ],
+                                        ),
+                                        const SizedBox(height: 28),
+                                        InkWell(
+                                          borderRadius: .circular(100),
+                                          onTap: () {
+                                            print("b $ontapped");
+                                            setState(() {
+                                              ontapped = !ontapped;
+                                            });
+                                            print("a $ontapped");
+                                          },
+                                          child: Container(
+                                            padding: .symmetric(horizontal: 16),
+                                            width: .infinity,
+                                            height: 56,
+                                            decoration: BoxDecoration(
+                                              borderRadius: .circular(100),
+                                              color: ontapped
+                                                  ? AppColors.secondaryColor
+                                                  : AppColors.primaryColor,
+                                            ),
+                                            child: Row(
+                                              mainAxisAlignment: .spaceBetween,
+                                              children: [
+                                                Text(
+                                                  sizes[0],
+                                                  style: TextStyle(
+                                                    fontSize: 16,
+                                                    fontWeight: .w500,
+                                                    color: AppColors.colorBlack,
+                                                  ),
+                                                ),
+                                                Icon(
+                                                  Icons.check,
+                                                  color: AppColors.colorBlack,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                        const SizedBox(height: 16),
+                                        InkWell(
+                                          borderRadius: .circular(100),
+                                          onTap: () {
+                                            setState(() {
+                                              ontapped = !ontapped;
+                                            });
+                                          },
+                                          child: Container(
+                                            padding: .symmetric(horizontal: 16),
+                                            width: .infinity,
+                                            height: 56,
+                                            decoration: BoxDecoration(
+                                              borderRadius: .circular(100),
+                                              color: ontapped
+                                                  ? AppColors.secondaryColor
+                                                  : AppColors.primaryColor,
+                                            ),
+                                            child: Row(
+                                              mainAxisAlignment: .spaceBetween,
+                                              children: [
+                                                Text(
+                                                  sizes[1],
+                                                  style: TextStyle(
+                                                    fontSize: 16,
+                                                    fontWeight: .w500,
+                                                    color: AppColors.colorBlack,
+                                                  ),
+                                                ),
+                                                Icon(
+                                                  Icons.check,
+                                                  color: AppColors.colorBlack,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                        const SizedBox(height: 16),
 
-                        items: [
-                          DropdownMenuItem(
-                            value: "S",
-                            child: Text(
-                              "S",
-                              style: TextStyle(fontSize: 12, fontWeight: .w700),
-                            ),
-                          ),
-                          DropdownMenuItem(
-                            value: "M",
-                            child: Text(
-                              "M",
-                              style: TextStyle(fontSize: 12, fontWeight: .w700),
-                            ),
-                          ),
-                          DropdownMenuItem(
-                            value: "L",
-                            child: Text(
-                              "L",
-                              style: TextStyle(fontSize: 12, fontWeight: .w700),
-                            ),
-                          ),
-                        ],
-                        onChanged: (value) {},
+                                        InkWell(
+                                          borderRadius: .circular(100),
+                                          onTap: () {
+                                            setState(() {
+                                              ontapped = !ontapped;
+                                            });
+                                          },
+                                          child: Container(
+                                            padding: .symmetric(horizontal: 16),
+                                            width: .infinity,
+                                            height: 56,
+                                            decoration: BoxDecoration(
+                                              borderRadius: .circular(100),
+                                              color: ontapped
+                                                  ? AppColors.secondaryColor
+                                                  : AppColors.primaryColor,
+                                            ),
+                                            child: Row(
+                                              mainAxisAlignment: .spaceBetween,
+                                              children: [
+                                                Text(
+                                                  sizes[2],
+                                                  style: TextStyle(
+                                                    fontSize: 16,
+                                                    fontWeight: .w500,
+                                                    color: AppColors.colorBlack,
+                                                  ),
+                                                ),
+                                                Icon(
+                                                  Icons.check,
+                                                  color: AppColors.colorBlack,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                        const SizedBox(height: 16),
+
+                                        InkWell(
+                                          borderRadius: .circular(100),
+                                          onTap: () {
+                                            setState(() {
+                                              ontapped = !ontapped;
+                                            });
+                                          },
+                                          child: Container(
+                                            padding: .symmetric(horizontal: 16),
+                                            width: .infinity,
+                                            height: 56,
+                                            decoration: BoxDecoration(
+                                              borderRadius: .circular(100),
+                                              color: ontapped
+                                                  ? AppColors.secondaryColor
+                                                  : AppColors.primaryColor,
+                                            ),
+                                            child: Row(
+                                              mainAxisAlignment: .spaceBetween,
+                                              children: [
+                                                Text(
+                                                  sizes[3],
+                                                  style: TextStyle(
+                                                    fontSize: 16,
+                                                    fontWeight: .w500,
+                                                    color: AppColors.colorBlack,
+                                                  ),
+                                                ),
+                                                Icon(
+                                                  Icons.check,
+                                                  color: AppColors.colorBlack,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                        const SizedBox(height: 16),
+
+                                        InkWell(
+                                          borderRadius: .circular(100),
+                                          onTap: () {
+                                            setState(() {
+                                              ontapped = !ontapped;
+                                            });
+                                          },
+                                          child: Container(
+                                            padding: .symmetric(horizontal: 16),
+                                            width: .infinity,
+                                            height: 56,
+                                            decoration: BoxDecoration(
+                                              borderRadius: .circular(100),
+                                              color: ontapped
+                                                  ? AppColors.secondaryColor
+                                                  : AppColors.primaryColor,
+                                            ),
+                                            child: Row(
+                                              mainAxisAlignment: .spaceBetween,
+                                              children: [
+                                                Text(
+                                                  sizes[4],
+                                                  style: TextStyle(
+                                                    fontSize: 16,
+                                                    fontWeight: .w500,
+                                                    color: AppColors.colorBlack,
+                                                  ),
+                                                ),
+                                                Icon(
+                                                  Icons.check,
+                                                  color: AppColors.colorBlack,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              );
+                            },
+                          );
+                        },
+                        child: Icon(CupertinoIcons.arrow_down),
                       ),
                     ),
                   ],
@@ -182,43 +403,251 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                   children: [
                     Text("Color", style: AppTextStyles.secondaryTextBlack),
                     SizedBox(
-                      height: .infinity,
-                      width: 100,
-                      child: DropdownButtonFormField(
-                        decoration: InputDecoration(
-                          // contentPadding: EdgeInsets.only(bottom: 30),
-                          fillColor: Colors.transparent,
-                          filled: true,
-                          border: OutlineInputBorder(
-                            borderRadius: .circular(100),
-                            borderSide: .none,
-                          ),
-                        ),
+                      height: 56,
+                      width: 50,
+                      child: InkWell(
+                        borderRadius: .circular(100),
+                        onTap: () {
+                          showModalBottomSheet(
+                            backgroundColor: AppColors.backgroundLight,
+                            context: context,
+                            shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadius.vertical(
+                                top: Radius.circular(16),
+                              ),
+                            ),
+                            builder: (BuildContext context) {
+                              return SizedBox(
+                                height: MediaQuery.sizeOf(context).height / 2,
+                                child: SingleChildScrollView(
+                                  scrollDirection: .vertical,
+                                  child: padded(
+                                    Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment: .center,
+                                      children: [
+                                        const SizedBox(height: 16),
+                                        Row(
+                                          mainAxisAlignment: .spaceBetween,
+                                          mainAxisSize: .max,
+                                          children: [
+                                            SizedBox(width: 24),
+                                            Text(
+                                              "Colors",
+                                              style: TextStyle(
+                                                fontSize: 24,
+                                                fontWeight: .w700,
+                                                color: AppColors.colorBlack,
+                                              ),
+                                            ),
+                                            IconButton(
+                                              onPressed: () {
+                                                Navigator.pop(context);
+                                              },
+                                              icon: Icon(Icons.check, size: 24),
+                                            ),
+                                          ],
+                                        ),
+                                        const SizedBox(height: 28),
+                                        InkWell(
+                                          borderRadius: .circular(100),
+                                          onTap: () {
+                                            print("b $ontapped");
+                                            setState(() {
+                                              ontapped = !ontapped;
+                                            });
+                                            print("a $ontapped");
+                                          },
+                                          child: Container(
+                                            padding: .symmetric(horizontal: 16),
+                                            width: .infinity,
+                                            height: 56,
+                                            decoration: BoxDecoration(
+                                              borderRadius: .circular(100),
+                                              color: ontapped
+                                                  ? AppColors.secondaryColor
+                                                  : AppColors.primaryColor,
+                                            ),
+                                            child: Row(
+                                              mainAxisAlignment: .spaceBetween,
+                                              children: [
+                                                Text(
+                                                  keys[0],
+                                                  style: TextStyle(
+                                                    fontSize: 16,
+                                                    fontWeight: .w500,
+                                                    color: AppColors.colorBlack,
+                                                  ),
+                                                ),
+                                                CircleAvatar(
+                                                  radius: 8,
+                                                  backgroundColor: values[0],
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                        const SizedBox(height: 16),
+                                        InkWell(
+                                          borderRadius: .circular(100),
+                                          onTap: () {
+                                            setState(() {
+                                              ontapped = !ontapped;
+                                            });
+                                          },
+                                          child: Container(
+                                            padding: .symmetric(horizontal: 16),
+                                            width: .infinity,
+                                            height: 56,
+                                            decoration: BoxDecoration(
+                                              borderRadius: .circular(100),
+                                              color: ontapped
+                                                  ? AppColors.secondaryColor
+                                                  : AppColors.primaryColor,
+                                            ),
+                                            child: Row(
+                                              mainAxisAlignment: .spaceBetween,
+                                              children: [
+                                                Text(
+                                                  keys[1],
+                                                  style: TextStyle(
+                                                    fontSize: 16,
+                                                    fontWeight: .w500,
+                                                    color: AppColors.colorBlack,
+                                                  ),
+                                                ),
+                                                CircleAvatar(
+                                                  radius: 8,
+                                                  backgroundColor: values[1],
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                        const SizedBox(height: 16),
 
-                        items: [
-                          DropdownMenuItem(
-                            value: "colorLemon",
-                            child: CircleAvatar(
-                              radius: 8,
-                              backgroundColor: Color(0xFFB3B68B),
-                            ),
-                          ),
-                          DropdownMenuItem(
-                            value: "M",
-                            child: CircleAvatar(
-                              radius: 8,
-                              backgroundColor: Colors.red,
-                            ),
-                          ),
-                          DropdownMenuItem(
-                            value: "L",
-                            child: CircleAvatar(
-                              radius: 8,
-                              backgroundColor: Colors.black,
-                            ),
-                          ),
-                        ],
-                        onChanged: (value) {},
+                                        InkWell(
+                                          borderRadius: .circular(100),
+                                          onTap: () {
+                                            setState(() {
+                                              ontapped = !ontapped;
+                                            });
+                                          },
+                                          child: Container(
+                                            padding: .symmetric(horizontal: 16),
+                                            width: .infinity,
+                                            height: 56,
+                                            decoration: BoxDecoration(
+                                              borderRadius: .circular(100),
+                                              color: ontapped
+                                                  ? AppColors.secondaryColor
+                                                  : AppColors.primaryColor,
+                                            ),
+                                            child: Row(
+                                              mainAxisAlignment: .spaceBetween,
+                                              children: [
+                                                Text(
+                                                  keys[2],
+                                                  style: TextStyle(
+                                                    fontSize: 16,
+                                                    fontWeight: .w500,
+                                                    color: AppColors.colorBlack,
+                                                  ),
+                                                ),
+                                                CircleAvatar(
+                                                  radius: 8,
+                                                  backgroundColor: values[2],
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                        const SizedBox(height: 16),
+
+                                        InkWell(
+                                          borderRadius: .circular(100),
+                                          onTap: () {
+                                            setState(() {
+                                              ontapped = !ontapped;
+                                            });
+                                          },
+                                          child: Container(
+                                            padding: .symmetric(horizontal: 16),
+                                            width: .infinity,
+                                            height: 56,
+                                            decoration: BoxDecoration(
+                                              borderRadius: .circular(100),
+                                              color: ontapped
+                                                  ? AppColors.secondaryColor
+                                                  : AppColors.primaryColor,
+                                            ),
+                                            child: Row(
+                                              mainAxisAlignment: .spaceBetween,
+                                              children: [
+                                                Text(
+                                                  keys[3],
+                                                  style: TextStyle(
+                                                    fontSize: 16,
+                                                    fontWeight: .w500,
+                                                    color: AppColors.colorBlack,
+                                                  ),
+                                                ),
+                                                CircleAvatar(
+                                                  radius: 8,
+                                                  backgroundColor: values[3],
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                        const SizedBox(height: 16),
+
+                                        InkWell(
+                                          borderRadius: .circular(100),
+                                          onTap: () {
+                                            setState(() {
+                                              ontapped = !ontapped;
+                                            });
+                                          },
+                                          child: Container(
+                                            padding: .symmetric(horizontal: 16),
+                                            width: .infinity,
+                                            height: 56,
+                                            decoration: BoxDecoration(
+                                              borderRadius: .circular(100),
+                                              color: ontapped
+                                                  ? AppColors.secondaryColor
+                                                  : AppColors.primaryColor,
+                                            ),
+                                            child: Row(
+                                              mainAxisAlignment: .spaceBetween,
+                                              children: [
+                                                Text(
+                                                  keys[4],
+                                                  style: TextStyle(
+                                                    fontSize: 16,
+                                                    fontWeight: .w500,
+                                                    color: AppColors.colorBlack,
+                                                  ),
+                                                ),
+                                                CircleAvatar(
+                                                  radius: 8,
+                                                  backgroundColor: values[4],
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              );
+                            },
+                          );
+                        },
+                        child: Icon(CupertinoIcons.arrow_down),
                       ),
                     ),
                   ],

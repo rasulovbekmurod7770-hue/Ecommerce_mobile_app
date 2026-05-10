@@ -1,7 +1,7 @@
 import 'package:clothing_app_ui/core/constants/app_colors.dart';
 import 'package:flutter/material.dart';
 
-class AppTextStyles {
+class AppTextStyles { 
   static const heading = TextStyle(
     color: Colors.black,
     fontSize: 32,
