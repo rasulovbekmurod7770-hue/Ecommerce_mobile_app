@@ -138,7 +138,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                   mainAxisAlignment: .spaceBetween,
                   children: [
                     Text("Size", style: AppTextStyles.secondaryTextBlack),
-                    SizedBox(
+                     SizedBox(
                       height: 56,
                       width: 50,
                       child: InkWell(
@@ -179,8 +179,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                             ),
                                             IconButton(
                                               onPressed: () {
-                                                Navigator.pop(context);
-                                              },
+                                                Navigator.pop(context);},
                                               icon: Icon(Icons.check, size: 24),
                                             ),
                                           ],
@@ -216,10 +215,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                                     color: AppColors.colorBlack,
                                                   ),
                                                 ),
-                                                Icon(
-                                                  Icons.check,
-                                                  color: AppColors.colorBlack,
-                                                ),
+                                                Icon(Icons.check, color: AppColors.colorBlack,),
                                               ],
                                             ),
                                           ),
@@ -253,10 +249,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                                     color: AppColors.colorBlack,
                                                   ),
                                                 ),
-                                                Icon(
-                                                  Icons.check,
-                                                  color: AppColors.colorBlack,
-                                                ),
+                                                Icon(Icons.check, color: AppColors.colorBlack,),
                                               ],
                                             ),
                                           ),
@@ -291,10 +284,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                                     color: AppColors.colorBlack,
                                                   ),
                                                 ),
-                                                Icon(
-                                                  Icons.check,
-                                                  color: AppColors.colorBlack,
-                                                ),
+                                                Icon(Icons.check, color: AppColors.colorBlack,),
                                               ],
                                             ),
                                           ),
@@ -329,10 +319,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                                     color: AppColors.colorBlack,
                                                   ),
                                                 ),
-                                                Icon(
-                                                  Icons.check,
-                                                  color: AppColors.colorBlack,
-                                                ),
+                                                Icon(Icons.check, color: AppColors.colorBlack,),
                                               ],
                                             ),
                                           ),
@@ -367,10 +354,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                                     color: AppColors.colorBlack,
                                                   ),
                                                 ),
-                                                Icon(
-                                                  Icons.check,
-                                                  color: AppColors.colorBlack,
-                                                ),
+                                                Icon(Icons.check, color: AppColors.colorBlack,),
                                               ],
                                             ),
                                           ),

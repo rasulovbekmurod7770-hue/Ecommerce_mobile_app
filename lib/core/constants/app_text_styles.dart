@@ -20,7 +20,7 @@ class AppTextStyles {
   static const hintText = TextStyle(
     color: Color(0xFF27272780),
     fontSize: 16,
-    fontWeight: .w400,
+    fontWeight: .w500,
   );
   static const nameOfProduct = TextStyle(
     color: AppColors.colorBlack,
