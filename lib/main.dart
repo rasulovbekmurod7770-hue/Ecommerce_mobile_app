@@ -1,16 +1,10 @@
 import 'package:clothing_app_ui/core/provider/cart_provider.dart';
-import 'package:clothing_app_ui/features/auth/pages/sign_in_page.dart';
-import 'package:clothing_app_ui/features/cart/cart_screen.dart';
-import 'package:clothing_app_ui/features/checkout/checkout_screen.dart';
-import 'package:clothing_app_ui/features/home/pages/Hoodies_page.dart';
-import 'package:clothing_app_ui/features/home/pages/categories.dart';
-import 'package:clothing_app_ui/features/home/pages/home_page.dart';
-import 'package:clothing_app_ui/features/notifications/pages/no_notification_screen.dart';
-import 'package:clothing_app_ui/features/notifications/pages/notification_exist_page.dart';
-import 'package:clothing_app_ui/features/orders/pages/no_orders_screen.dart';
-import 'package:clothing_app_ui/features/orders/pages/orders_exist_screen.dart';
-import 'package:clothing_app_ui/features/product%20page/product_details_screen.dart';
-import 'package:clothing_app_ui/features/search_filter/search_screen.dart';
+import 'package:clothing_app_ui/features/notifications/widgets/notification_exist_page.dart';
+import 'package:clothing_app_ui/features/notifications/pages/notifications_screen.dart';
+import 'package:clothing_app_ui/features/order_placed_success/order_placed_screen.dart';
+import 'package:clothing_app_ui/features/orders/pages/orders_screen.dart';
+import 'package:clothing_app_ui/features/orders/widgets/orders_exist_screen.dart';
+import 'package:clothing_app_ui/features/profile/profile_screen.dart';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -46,8 +40,10 @@ class MyApp extends StatelessWidget {
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
       debugShowCheckedModeBanner: false,
-      home: ChangeNotifierProvider(create: (context) => CartProvider(),
-      child: CheckoutScreen(),)
+      home: OrdersScreen()
+      
+      // ChangeNotifierProvider(create: (context) => CartProvider(),
+      // child: ProfileScreen(),)
     );
   }
 }

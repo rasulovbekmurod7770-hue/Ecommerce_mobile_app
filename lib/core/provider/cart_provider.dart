@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 class CartProvider extends ChangeNotifier {
   int _productCount = 1;
   double _priceOfJacket = 198;
-  double _shippingCost = 8.00;
-  double _tax = 0;
+  final double _shippingCost = 8.00;
+  final double _tax = 0;
 
   int get productCount => _productCount;
   double get priceOfJacket => _priceOfJacket;

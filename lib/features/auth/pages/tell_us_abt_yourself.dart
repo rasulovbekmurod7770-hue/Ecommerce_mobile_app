@@ -125,9 +125,9 @@ class _TellUsAbtYourselfState extends State<TellUsAbtYourself> {
                   ),
                 ),
                 items: [
-                  DropdownMenuItem(child: Text("1-18"), value: "1-18"),
-                  DropdownMenuItem(child: Text("18-25"), value: "18-25"),
-                  DropdownMenuItem(child: Text("25+"), value: "25+"),
+                  DropdownMenuItem(value: "1-18", child: Text("1-18")),
+                  DropdownMenuItem(value: "18-25", child: Text("18-25")),
+                  DropdownMenuItem(value: "25+", child: Text("25+")),
                 ],
                 onChanged: (value) {},
               ),

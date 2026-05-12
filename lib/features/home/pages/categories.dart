@@ -4,7 +4,6 @@ import 'package:clothing_app_ui/features/home/pages/Hoodies_page.dart';
 import 'package:clothing_app_ui/features/home/pages/home_page.dart';
 import 'package:clothing_app_ui/features/home/widgets/listtile.dart';
 import 'package:clothing_app_ui/features/home/widgets/padding.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Categories extends StatelessWidget {

@@ -1,12 +1,10 @@
 import 'package:clothing_app_ui/core/constants/app_colors.dart';
-import 'package:clothing_app_ui/core/constants/app_text_styles.dart';
 import 'package:clothing_app_ui/core/widgets/main.textfield.dart';
 import 'package:clothing_app_ui/features/home/pages/categories.dart';
 import 'package:clothing_app_ui/features/home/widgets/circleavatarw.dart';
 import 'package:clothing_app_ui/features/home/widgets/main_widget.dart';
 import 'package:clothing_app_ui/features/home/widgets/padding.dart';
 import 'package:clothing_app_ui/features/home/widgets/texts.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {

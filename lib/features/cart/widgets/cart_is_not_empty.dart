@@ -206,7 +206,7 @@ class _CartisNotEmptyState extends State<CartisNotEmpty> {
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: .w500,
-                      color: Color(0xFF27272780),
+                      color: Color(0xff27272780),
                     ),
                   ),
                   Text("\$${cart.subtotal}"),
@@ -220,7 +220,7 @@ class _CartisNotEmptyState extends State<CartisNotEmpty> {
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: .w500,
-                      color: Color(0xFF27272780),
+                      color: Color(0xff27272780),
                     ),
                   ),
                   Text("\$${cart.shippingCost}"),
@@ -234,7 +234,7 @@ class _CartisNotEmptyState extends State<CartisNotEmpty> {
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: .w500,
-                      color: Color(0xFF27272780),
+                      color: Color(0xff27272780),
                     ),
                   ),
                   Text("\$${cart.tax}"),
@@ -248,7 +248,7 @@ class _CartisNotEmptyState extends State<CartisNotEmpty> {
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: .w500,
-                      color: Color(0xFF27272780),
+                      color: Color(0xff27272780),
                     ),
                   ),
                   Text("\$${cart.total}"),

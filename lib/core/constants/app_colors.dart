@@ -8,6 +8,6 @@ class AppColors {
   static const backgroundLight = Colors.white;
   static const colorBlack = Colors.black;
   static const colorWhite = Color(0xFFFFFFFF);
-  static const descriptionColor = Color(0xFF27272780);
+  static const descriptionColor = Color(0xff27272780);
   
 }
