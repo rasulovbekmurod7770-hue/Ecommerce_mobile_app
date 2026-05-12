@@ -1,10 +1,15 @@
 import 'package:clothing_app_ui/core/provider/cart_provider.dart';
+import 'package:clothing_app_ui/features/address/address_screen.dart';
 import 'package:clothing_app_ui/features/notifications/widgets/notification_exist_page.dart';
 import 'package:clothing_app_ui/features/notifications/pages/notifications_screen.dart';
 import 'package:clothing_app_ui/features/order_placed_success/order_placed_screen.dart';
+import 'package:clothing_app_ui/features/orders/pages/order_detail.dart';
 import 'package:clothing_app_ui/features/orders/pages/orders_screen.dart';
 import 'package:clothing_app_ui/features/orders/widgets/orders_exist_screen.dart';
+import 'package:clothing_app_ui/features/payment/pages/add_card.dart';
+import 'package:clothing_app_ui/features/payment/pages/payment_screen.dart';
 import 'package:clothing_app_ui/features/profile/profile_screen.dart';
+import 'package:clothing_app_ui/features/wishlist/wishlist_screen.dart';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -40,7 +45,7 @@ class MyApp extends StatelessWidget {
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
       debugShowCheckedModeBanner: false,
-      home: OrdersScreen()
+      home: WishlistScreen()
       
       // ChangeNotifierProvider(create: (context) => CartProvider(),
       // child: ProfileScreen(),)

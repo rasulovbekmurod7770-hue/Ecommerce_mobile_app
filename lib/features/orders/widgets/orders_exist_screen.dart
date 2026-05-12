@@ -1,10 +1,17 @@
+import 'package:flutter/material.dart';
 import 'package:clothing_app_ui/core/constants/app_colors.dart';
 import 'package:clothing_app_ui/core/constants/app_text_styles.dart';
 import 'package:clothing_app_ui/features/home/widgets/padding.dart';
-import 'package:flutter/material.dart';
 
-class OrdersExist extends StatelessWidget {
-  OrdersExist({super.key});
+class OrdersExist extends StatefulWidget {
+  const OrdersExist({super.key});
+
+  @override
+  State<OrdersExist> createState() => _OrdersExistState();
+}
+
+class _OrdersExistState extends State<OrdersExist> {
+  int selectedIndex = 0;
 
   final List<String> namesOfTabbar = [
     "Processing",
@@ -17,89 +24,103 @@ class OrdersExist extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      scrollDirection: .vertical,
+      scrollDirection: Axis.vertical,
       child: padded(
         Column(
-          mainAxisAlignment: .center,
-          crossAxisAlignment: .center,
           children: [
             const SizedBox(height: 71),
-            Text(
+            const Text(
               "Orders",
               style: TextStyle(
                 fontSize: 16,
-                fontWeight: .w700,
-                color: AppColors.colorBlack,
+                fontWeight: FontWeight.w700,
+                color: Colors.black,
               ),
             ),
             const SizedBox(height: 40),
-            SingleChildScrollView(
-              scrollDirection: .horizontal,
-              child: Row(
-                children: [
-                  SizedBox(
-                    height: 30,
-                    width: MediaQuery.of(context).size.width,
-                    child: ListView.separated(
-                      scrollDirection: .horizontal,
-                      itemCount: namesOfTabbar.length,
-                      separatorBuilder: (context, index) =>
-                          const SizedBox(width: 13),
-                      itemBuilder: (context, index) {
-                        return Container(
-                          padding: .symmetric(horizontal: 8, vertical: 4),
-                          height: 27,
-                          decoration: BoxDecoration(
-                            color: AppColors.primaryColor,
-                            borderRadius: .circular(100),
-                          ),
-                          child: Text(namesOfTabbar[index]),
-                        );
-                      },
+
+            SizedBox(
+              height: 30,
+
+              child: ListView.separated(
+                scrollDirection: Axis.horizontal,
+                itemCount: namesOfTabbar.length,
+                separatorBuilder: (context, index) => const SizedBox(width: 13),
+                itemBuilder: (context, index) {
+                  bool isSelected = selectedIndex == index;
+
+                  return InkWell(
+                    onTap: () {
+                      setState(() {
+                        selectedIndex = index;
+                      });
+                    },
+                    borderRadius: BorderRadius.circular(100),
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 12,
+                        vertical: 4,
+                      ),
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        color: isSelected
+                            ? AppColors.primaryColor
+                            : AppColors.secondaryColor,
+                        borderRadius: BorderRadius.circular(100),
+                      ),
+                      child: Text(
+                        namesOfTabbar[index],
+                        style: TextStyle(
+                          color: isSelected
+                              ? AppColors.colorWhite
+                              : AppColors.colorBlack,
+                          fontWeight: .w500,
+                        ),
+                      ),
                     ),
-                  ),
-                ],
+                  );
+                },
               ),
             ),
             const SizedBox(height: 24),
-            SizedBox(
-              height: 300,
-              child: ListView.separated(
-                itemCount: 3,
-                separatorBuilder: (context, index) => const SizedBox(height: 8),
-                itemBuilder: (context, index) => Container(
-                  padding: .symmetric(horizontal: 12, vertical: 15),
-                  height: 72,
-                  width: .infinity,
-                  decoration: BoxDecoration(
-                    color: AppColors.secondaryColor,
-                    borderRadius: .circular(8),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: .spaceBetween,
-                    children: [
-                      Row(
-                        spacing: 12,
-                        children: [
-                          Icon(Icons.receipt, size: 40, color: Colors.grey),
 
-                          Column(
-                            crossAxisAlignment: .start,
-                            children: [
-                              Text(
-                                "Order  #456765",
-                                style: AppTextStyles.secondaryTextBlack,
-                              ),
-                              const SizedBox(height: 2),
-                              Text("4 items", style: AppTextStyles.description),
-                            ],
-                          ),
-                        ],
-                      ),
-
-                      Icon(Icons.arrow_forward_ios),
-                    ],
-                  ),
+            // Order List
+            ListView.separated(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: 3,
+              separatorBuilder: (context, index) => const SizedBox(height: 8),
+              itemBuilder: (context, index) => Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 15,
+                ),
+                decoration: BoxDecoration(
+                  color: AppColors.secondaryColor,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        const Icon(Icons.receipt, size: 40, color: Colors.grey),
+                        const SizedBox(width: 12),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Order #456765",
+                              style: AppTextStyles.secondaryTextBlack,
+                            ),
+                            const SizedBox(height: 2),
+                            Text("4 items", style: AppTextStyles.description),
+                          ],
+                        ),
+                      ],
+                    ),
+                    const Icon(Icons.arrow_forward_ios, size: 16),
+                  ],
                 ),
               ),
             ),
