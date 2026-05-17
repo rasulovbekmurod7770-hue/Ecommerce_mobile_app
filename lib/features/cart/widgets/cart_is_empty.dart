@@ -16,13 +16,13 @@ class CartIsEmpty extends StatelessWidget {
             const SizedBox(height: 71),
             Row(
               crossAxisAlignment: .start,
-              
+
               children: [
                 InkWell(
                   onTap: () {
                     Navigator.pop(context);
                   },
-                  child: CircleAvatar(
+                  child: const CircleAvatar(
                     backgroundColor: AppColors.secondaryColor,
                     radius: 20,
                     child: Icon(
@@ -32,13 +32,12 @@ class CartIsEmpty extends StatelessWidget {
                     ),
                   ),
                 ),
-                
               ],
             ),
             const SizedBox(height: 204),
-            Image(image: AssetImage("assets/images/parcel.png")),
+            const Image(image: AssetImage("assets/images/parcel.png")),
             const SizedBox(height: 24),
-            Text(
+            const Text(
               "Your Cart is Empty",
               style: TextStyle(
                 fontSize: 24,
@@ -51,7 +50,7 @@ class CartIsEmpty extends StatelessWidget {
               text: "Explore Categories",
               height: 52,
               width: 185,
-              page: HomePage(),
+              onPressed: () {},
             ),
           ],
         ),

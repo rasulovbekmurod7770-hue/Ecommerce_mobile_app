@@ -20,19 +20,20 @@ class _CartScreenState extends State<CartScreen> {
     return Scaffold(
       backgroundColor: AppColors.backgroundLight,
       body: isEmpty ? CartIsEmpty() : CartisNotEmpty(),
-      bottomNavigationBar: isEmpty ? null : Container(
-        padding: .symmetric(vertical: 14),
-        height: 80,
-        child: padded(
-          MainButton(
-            text: "Checkout",
-            height: 52,
-            width: .infinity,
-            page: HomePage(),
-          ),
-        ),
-      ),
+      bottomNavigationBar: isEmpty
+          ? null
+          : Container(
+              padding: .symmetric(vertical: 14),
+              height: 80,
+              child: padded(
+                MainButton(
+                  text: "Checkout",
+                  height: 52,
+                  width: .infinity,
+                  onPressed: () {},
+                ),
+              ),
+            ),
     );
   }
 }
-

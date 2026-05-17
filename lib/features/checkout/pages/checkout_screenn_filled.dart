@@ -195,7 +195,7 @@ class CheckoutScreennFilled extends StatelessWidget {
             text: "Checkout",
             height: 52,
             width: .infinity,
-            page: HomePage(),
+            onPressed: () {},
           ),
         ),
       ),

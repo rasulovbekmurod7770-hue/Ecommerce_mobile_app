@@ -34,7 +34,7 @@ class _AddressDetailState extends State<AddCard> {
                   onTap: () {
                     Navigator.pop(context);
                   },
-                  child: CircleAvatar(
+                  child: const CircleAvatar(
                     backgroundColor: AppColors.secondaryColor,
                     radius: 20,
                     child: Icon(
@@ -44,7 +44,7 @@ class _AddressDetailState extends State<AddCard> {
                     ),
                   ),
                 ),
-                Text(
+                const Text(
                   "Add Card",
                   style: TextStyle(
                     fontSize: 16,
@@ -64,8 +64,11 @@ class _AddressDetailState extends State<AddCard> {
                 controller: cardNumberController,
                 decoration: InputDecoration(
                   isDense: true,
-                  contentPadding: .symmetric(vertical: 23, horizontal: 5),
-                  hint: Text("Card Number", style: AppTextStyles.hintText),
+                  contentPadding: const .symmetric(vertical: 23, horizontal: 5),
+                  hint: const Text(
+                    "Card Number",
+                    style: AppTextStyles.hintText,
+                  ),
                   fillColor: AppColors.secondaryColor,
                   filled: true,
                   border: OutlineInputBorder(
@@ -88,8 +91,11 @@ class _AddressDetailState extends State<AddCard> {
                     controller: ccvController,
                     decoration: InputDecoration(
                       isDense: true,
-                      contentPadding: .symmetric(vertical: 23, horizontal: 5),
-                      hint: Text("CCV", style: AppTextStyles.hintText),
+                      contentPadding: const .symmetric(
+                        vertical: 23,
+                        horizontal: 5,
+                      ),
+                      hint: const Text("CCV", style: AppTextStyles.hintText),
                       fillColor: AppColors.secondaryColor,
                       filled: true,
                       border: OutlineInputBorder(
@@ -107,8 +113,11 @@ class _AddressDetailState extends State<AddCard> {
                     keyboardType: .number,
                     decoration: InputDecoration(
                       isDense: true,
-                      contentPadding: .symmetric(vertical: 23, horizontal: 5),
-                      hint: Text("Exp", style: AppTextStyles.hintText),
+                      contentPadding: const .symmetric(
+                        vertical: 23,
+                        horizontal: 5,
+                      ),
+                      hint: const Text("Exp", style: AppTextStyles.hintText),
                       fillColor: AppColors.secondaryColor,
                       filled: true,
                       border: OutlineInputBorder(
@@ -129,8 +138,11 @@ class _AddressDetailState extends State<AddCard> {
                 controller: cardHolderNameController,
                 decoration: InputDecoration(
                   isDense: true,
-                  contentPadding: .symmetric(vertical: 23, horizontal: 5),
-                  hint: Text("Cardholder Name", style: AppTextStyles.hintText),
+                  contentPadding: const .symmetric(vertical: 23, horizontal: 5),
+                  hint: const Text(
+                    "Cardholder Name",
+                    style: AppTextStyles.hintText,
+                  ),
                   fillColor: AppColors.secondaryColor,
                   filled: true,
                   border: OutlineInputBorder(
@@ -144,14 +156,14 @@ class _AddressDetailState extends State<AddCard> {
         ),
       ),
       bottomNavigationBar: Container(
-        padding: .symmetric(vertical: 14),
+        padding: const .symmetric(vertical: 14),
         height: 80,
         child: padded(
           MainButton(
             text: "Save",
             height: 52,
             width: .infinity,
-            page: HomePage(),
+            onPressed: () {},
           ),
         ),
       ),

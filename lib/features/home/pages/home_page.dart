@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
               Row(
                 mainAxisAlignment: .spaceBetween,
                 children: [
-                  CircleAvatar(
+                  const CircleAvatar(
                     radius: 20,
                     backgroundImage: AssetImage("assets/images/image.png"),
                   ),
@@ -41,14 +41,14 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                       items: [
-                        DropdownMenuItem(
+                        const DropdownMenuItem(
                           value: "Men",
                           child: Text(
                             "Men",
                             style: TextStyle(fontSize: 12, fontWeight: .w700),
                           ),
                         ),
-                        DropdownMenuItem(
+                        const DropdownMenuItem(
                           value: "Women",
                           child: Text(
                             "Women",
@@ -59,7 +59,7 @@ class HomePage extends StatelessWidget {
                       onChanged: (value) {},
                     ),
                   ),
-                  CircleAvatar(
+                  const CircleAvatar(
                     radius: 20,
                     backgroundColor: AppColors.primaryColor,
                     child: Icon(
@@ -72,9 +72,9 @@ class HomePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 24),
-            padded(Maintextdield()),
+            padded(const Maintextdield()),
             const SizedBox(height: 24),
-            padded(Texts(color: Colors.black, text1: "Categories", widget: Categories(),)),
+            padded(Texts(color: Colors.black, text1: "Categories", widget: const Categories(),)),
             const SizedBox(height: 16),
             Padding(
               padding: const .only(left: 24),
@@ -108,8 +108,8 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 24),
-            padded(Texts(color: Colors.black, text1: "Top Selling", widget: HomePage())),
+            const SizedBox(height: 24),
+            padded(Texts(color: Colors.black, text1: "Top Selling", widget: const HomePage())),
             const SizedBox(height: 16),
             Padding(
               padding: const .only(left: 24),
@@ -139,7 +139,7 @@ class HomePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 24),
-            padded(Texts(color: AppColors.primaryColor, text1: "New In", widget: HomePage())),
+            padded(Texts(color: AppColors.primaryColor, text1: "New In", widget: const HomePage())),
             const SizedBox(height: 16,), 
             Padding(
               padding: const .only(left: 24),

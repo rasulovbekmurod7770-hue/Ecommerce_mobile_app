@@ -14,15 +14,16 @@ class ResetPasswordSucces extends StatelessWidget {
         crossAxisAlignment: .center,
         children: [
           const SizedBox(height: 292,), 
-          SizedBox(
+          const SizedBox(
             height: 100,
             width: 100,
             child: Image(image: AssetImage("assets/images/success.png"))), 
           const SizedBox(height: 24,), 
-          Text(
+          const Text(
             "We Sent you an Email to reset \nyour password.", style: TextStyle(fontSize: 24, fontWeight: .w500, color: Colors.black),textAlign: .center,), 
           const SizedBox(height: 24,), 
-          MainButton(text: "Return to Login", height: 52, width: 159, page: SignInPage())
+          MainButton(text: "Return to Login", height: 52, width: 159, 
+            onPressed: () {},)
         ],
       ),
       

@@ -1,3 +1,5 @@
+import 'package:clothing_app_ui/features/auth/pages/sign_in_page.dart';
+import 'package:clothing_app_ui/features/auth/pages/sign_up_page.dart';
 import 'package:clothing_app_ui/features/favourites/pages/favourites.dart';
 
 import 'package:flutter/material.dart';
@@ -33,7 +35,7 @@ class MyApp extends StatelessWidget {
         colorScheme: .fromSeed(seedColor: Colors.deepPurple),
       ),
       debugShowCheckedModeBanner: false,
-      home: Favourites()
+      home: SignUpPage()
       
       // ChangeNotifierProvider(create: (context) => CartProvider(),
       // child: ProfileScreen(),)

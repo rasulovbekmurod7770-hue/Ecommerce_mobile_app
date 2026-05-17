@@ -15,7 +15,7 @@ class OrderPlacedScreen extends StatelessWidget {
       body: Column(
         children: [
           const SizedBox(height: 154),
-          SizedBox(
+          const SizedBox(
             height: 252,
             width: 317,
             child: Image(image: AssetImage("assets/images/successf.png")),
@@ -24,7 +24,7 @@ class OrderPlacedScreen extends StatelessWidget {
           Expanded(
             child: Container(
               width: .infinity,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: AppColors.secondaryColor,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(16),
@@ -37,12 +37,12 @@ class OrderPlacedScreen extends StatelessWidget {
                   crossAxisAlignment: .center,
                   children: [
                     const SizedBox(height: 40),
-                    Text(
+                    const Text(
                       "Order Placed \nSuccessfully",
                       style: AppTextStyles.heading,
                     ),
                     const SizedBox(height: 25),
-                    Text(
+                    const Text(
                       "You will recieve an email confirmation",
                       style: TextStyle(
                         fontSize: 16,
@@ -55,7 +55,7 @@ class OrderPlacedScreen extends StatelessWidget {
                       text: "See Order details",
                       height: 52,
                       width: .infinity,
-                      page: HomePage(),
+                      onPressed: () {},
                     ),
                   ],
                 ),

@@ -24,7 +24,7 @@ class Favourites extends StatelessWidget {
                   onTap: () {
                     Navigator.pop(context);
                   },
-                  child: CircleAvatar(
+                  child:const  CircleAvatar(
                     backgroundColor: AppColors.secondaryColor,
                     radius: 20,
                     child: Icon(
@@ -36,7 +36,7 @@ class Favourites extends StatelessWidget {
                 ),
                 Text(
                   "My Favourites ($favouritesCount)",
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 16,
                     fontWeight: .w700,
                     color: AppColors.colorBlack,
@@ -50,7 +50,7 @@ class Favourites extends StatelessWidget {
               height: 800,
               child: GridView.builder(
                 itemCount: 4,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   crossAxisSpacing: 20, 
                   // mainAxisExtent: 20, 

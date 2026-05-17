@@ -34,7 +34,7 @@ class _AddressDetailState extends State<AddAddress> {
                   onTap: () {
                     Navigator.pop(context);
                   },
-                  child: CircleAvatar(
+                  child: const CircleAvatar(
                     backgroundColor: AppColors.secondaryColor,
                     radius: 20,
                     child: Icon(
@@ -44,7 +44,7 @@ class _AddressDetailState extends State<AddAddress> {
                     ),
                   ),
                 ),
-                Text(
+                const Text(
                   "Add Address",
                   style: TextStyle(
                     fontSize: 16,
@@ -62,8 +62,11 @@ class _AddressDetailState extends State<AddAddress> {
                 controller: streetAdressController,
                 decoration: InputDecoration(
                   isDense: true,
-                  contentPadding: .symmetric(vertical: 23, horizontal: 5),
-                  hint: Text("Street Address", style: AppTextStyles.hintText),
+                  contentPadding: const .symmetric(vertical: 23, horizontal: 5),
+                  hint: const Text(
+                    "Street Address",
+                    style: AppTextStyles.hintText,
+                  ),
                   fillColor: AppColors.secondaryColor,
                   filled: true,
                   border: OutlineInputBorder(
@@ -81,8 +84,8 @@ class _AddressDetailState extends State<AddAddress> {
                 controller: cityController,
                 decoration: InputDecoration(
                   isDense: true,
-                  contentPadding: .symmetric(vertical: 23, horizontal: 5),
-                  hint: Text("City", style: AppTextStyles.hintText),
+                  contentPadding: const .symmetric(vertical: 23, horizontal: 5),
+                  hint: const Text("City", style: AppTextStyles.hintText),
                   fillColor: AppColors.secondaryColor,
                   filled: true,
                   border: OutlineInputBorder(
@@ -104,8 +107,11 @@ class _AddressDetailState extends State<AddAddress> {
                     controller: stateController,
                     decoration: InputDecoration(
                       isDense: true,
-                      contentPadding: .symmetric(vertical: 23, horizontal: 5),
-                      hint: Text("State", style: AppTextStyles.hintText),
+                      contentPadding: const .symmetric(
+                        vertical: 23,
+                        horizontal: 5,
+                      ),
+                      hint: const Text("State", style: AppTextStyles.hintText),
                       fillColor: AppColors.secondaryColor,
                       filled: true,
                       border: OutlineInputBorder(
@@ -123,8 +129,14 @@ class _AddressDetailState extends State<AddAddress> {
                     keyboardType: .number,
                     decoration: InputDecoration(
                       isDense: true,
-                      contentPadding: .symmetric(vertical: 23, horizontal: 5),
-                      hint: Text("Zip Code", style: AppTextStyles.hintText),
+                      contentPadding: const .symmetric(
+                        vertical: 23,
+                        horizontal: 5,
+                      ),
+                      hint: const Text(
+                        "Zip Code",
+                        style: AppTextStyles.hintText,
+                      ),
                       fillColor: AppColors.secondaryColor,
                       filled: true,
                       border: OutlineInputBorder(
@@ -140,14 +152,14 @@ class _AddressDetailState extends State<AddAddress> {
         ),
       ),
       bottomNavigationBar: Container(
-        padding: .symmetric(vertical: 14),
+        padding: const .symmetric(vertical: 14),
         height: 80,
         child: padded(
           MainButton(
             text: "Save",
             height: 52,
             width: .infinity,
-            page: HomePage(),
+            onPressed: () {},
           ),
         ),
       ),

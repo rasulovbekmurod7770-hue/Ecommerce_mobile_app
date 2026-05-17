@@ -4,14 +4,16 @@ import 'package:flutter/material.dart';
 
 class Textfieldforauth extends StatelessWidget {
    Textfieldforauth({
-    super.key, required this.hint, 
+    super.key, required this.hint, required this.controller 
   });
   String hint;
+  TextEditingController controller ;
 
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: controller,
       decoration: InputDecoration(
        
         hintText: hint ,

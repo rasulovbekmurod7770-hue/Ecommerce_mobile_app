@@ -7,28 +7,49 @@ import 'package:clothing_app_ui/features/auth/widgets/signinways_button.dart';
 import 'package:clothing_app_ui/features/auth/widgets/text_field.dart';
 import 'package:flutter/material.dart';
 
-class SignInPage extends StatelessWidget {
+class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
+
+  @override
+  State<SignInPage> createState() => _SignInPageState();
+}
+
+class _SignInPageState extends State<SignInPage> {
+  TextEditingController emailController = TextEditingController();
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFFFFFF),
+      backgroundColor: const Color(0xFFFFFFFF),
       body: Padding(
         padding: const .symmetric(horizontal: 23),
         child: Column(
           crossAxisAlignment: .start,
           children: [
             const SizedBox(height: 123),
-            Text("Sign in", style: AppTextStyles.heading),
+            const Text("Sign in", style: AppTextStyles.heading),
             const SizedBox(height: 32),
-            Textfieldforauth(hint: "Email Address"),
+            Textfieldforauth(
+              hint: "Email Address",
+              controller: emailController,
+            ),
             const SizedBox(height: 16),
-            MainButton(text: "Continue", width: .infinity, height: 49, page: SignInPasswordPage(),),
+            MainButton(
+              text: "Continue",
+              width: .infinity,
+              height: 49,
+              onPressed: () {},
+            ),
             const SizedBox(height: 16),
             Row(
               children: [
-                Text(
+                const Text(
                   "Dont have an Account ? ",
                   style: TextStyle(
                     color: AppColors.secondaryColor,
@@ -38,9 +59,14 @@ class SignInPage extends StatelessWidget {
                 ),
                 InkWell(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpPage(),));
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SignUpPage(),
+                      ),
+                    );
                   },
-                  child: Text(
+                  child: const Text(
                     "Create one",
                     style: TextStyle(
                       color: Colors.black,
@@ -51,16 +77,21 @@ class SignInPage extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 71,), 
-            Signinwaysbutton(icon: Icons.facebook, text: "Continue With Apple",), 
-            const SizedBox(height: 12,), 
-            Signinwaysbutton(icon: Icons.telegram, text: "Continue With Google"), 
-            const SizedBox(height: 12,), 
-            Signinwaysbutton(icon: Icons.facebook, text: "Continue With Facebook")
+            const SizedBox(height: 71),
+            Signinwaysbutton(icon: Icons.facebook, text: "Continue With Apple"),
+            const SizedBox(height: 12),
+            Signinwaysbutton(
+              icon: Icons.telegram,
+              text: "Continue With Google",
+            ),
+            const SizedBox(height: 12),
+            Signinwaysbutton(
+              icon: Icons.facebook,
+              text: "Continue With Facebook",
+            ),
           ],
         ),
       ),
     );
   }
 }
-

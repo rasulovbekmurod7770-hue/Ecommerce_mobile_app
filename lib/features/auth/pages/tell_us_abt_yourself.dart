@@ -24,12 +24,12 @@ class _TellUsAbtYourselfState extends State<TellUsAbtYourself> {
           crossAxisAlignment: .start,
           children: [
             const SizedBox(height: 161),
-            Text(
+            const Text(
               "Tell us About yourself",
               style: TextStyle(fontSize: 24, fontWeight: .w700),
             ),
             const SizedBox(height: 49),
-            Text(
+            const Text(
               "Who do you shop for ?",
               style: TextStyle(
                 fontSize: 16,
@@ -49,7 +49,7 @@ class _TellUsAbtYourselfState extends State<TellUsAbtYourself> {
                     });
                   },
                   child: Container(
-                    padding: .only(top: 12),
+                    padding: const .only(top: 12),
                     height: 52,
                     width: 161,
                     decoration: BoxDecoration(
@@ -77,7 +77,7 @@ class _TellUsAbtYourselfState extends State<TellUsAbtYourself> {
                     });
                   },
                   child: Container(
-                    padding: .only(top: 12),
+                    padding: const .only(top: 12),
                     height: 52,
                     width: 161,
                     decoration: BoxDecoration(
@@ -100,7 +100,7 @@ class _TellUsAbtYourselfState extends State<TellUsAbtYourself> {
               ],
             ),
             const SizedBox(height: 56),
-            Text(
+            const Text(
               "How Old are you ?",
               style: TextStyle(
                 fontSize: 16,
@@ -113,7 +113,7 @@ class _TellUsAbtYourselfState extends State<TellUsAbtYourself> {
               height: 56,
               width: .infinity,
               child: DropdownButtonFormField(
-                hint: Text("Age range"),
+                hint: const Text("Age range"),
 
                 decoration: InputDecoration(
                   fillColor: AppColors.secondaryColor,
@@ -124,9 +124,9 @@ class _TellUsAbtYourselfState extends State<TellUsAbtYourself> {
                   ),
                 ),
                 items: [
-                  DropdownMenuItem(value: "1-18", child: Text("1-18")),
-                  DropdownMenuItem(value: "18-25", child: Text("18-25")),
-                  DropdownMenuItem(value: "25+", child: Text("25+")),
+                  const DropdownMenuItem(value: "1-18", child: Text("1-18")),
+                  const DropdownMenuItem(value: "18-25", child: Text("18-25")),
+                  const DropdownMenuItem(value: "25+", child: Text("25+")),
                 ],
                 onChanged: (value) {},
               ),
@@ -134,14 +134,18 @@ class _TellUsAbtYourselfState extends State<TellUsAbtYourself> {
           ],
         ),
       ),
-      bottomNavigationBar: 
-      
-      Container(
+      bottomNavigationBar: Container(
         height: 80,
         color: AppColors.secondaryColor,
         child: Padding(
-          padding: .symmetric(horizontal: 24, vertical: 14),
-          child: MainButton(text: "finish", height: 52, width: .infinity, page: SignInPage())),
+          padding: const .symmetric(horizontal: 24, vertical: 14),
+          child: MainButton(
+            text: "finish",
+            height: 52,
+            width: .infinity,
+            onPressed: () {},
+          ),
+        ),
       ),
     );
   }
