@@ -10,7 +10,7 @@ class NotificationsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.backgroundLight,
-      body: isNotificationEmpty ? NotificationExists() : NoNotification(),
+      body: isNotificationEmpty ? const NotificationExists() : const NoNotification(),
     );
   }
 }

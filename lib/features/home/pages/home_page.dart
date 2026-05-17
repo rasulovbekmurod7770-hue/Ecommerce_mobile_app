@@ -74,7 +74,13 @@ class HomePage extends StatelessWidget {
             const SizedBox(height: 24),
             padded(const Maintextdield()),
             const SizedBox(height: 24),
-            padded(Texts(color: Colors.black, text1: "Categories", widget: const Categories(),)),
+            padded(
+              Texts(
+                color: Colors.black,
+                text1: "Categories",
+                widget: const Categories(),
+              ),
+            ),
             const SizedBox(height: 16),
             Padding(
               padding: const .only(left: 24),
@@ -109,11 +115,17 @@ class HomePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 24),
-            padded(Texts(color: Colors.black, text1: "Top Selling", widget: const HomePage())),
+            padded(
+              Texts(
+                color: Colors.black,
+                text1: "Top Selling",
+                widget: const HomePage(),
+              ),
+            ),
             const SizedBox(height: 16),
             Padding(
               padding: const .only(left: 24),
-        
+
               child: SingleChildScrollView(
                 scrollDirection: .horizontal,
                 child: Row(
@@ -139,11 +151,17 @@ class HomePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 24),
-            padded(Texts(color: AppColors.primaryColor, text1: "New In", widget: const HomePage())),
-            const SizedBox(height: 16,), 
+            padded(
+              Texts(
+                color: AppColors.primaryColor,
+                text1: "New In",
+                widget: const HomePage(),
+              ),
+            ),
+            const SizedBox(height: 16),
             Padding(
               padding: const .only(left: 24),
-        
+
               child: SingleChildScrollView(
                 scrollDirection: .horizontal,
                 child: Row(
@@ -171,6 +189,7 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
+      
     );
   }
 }

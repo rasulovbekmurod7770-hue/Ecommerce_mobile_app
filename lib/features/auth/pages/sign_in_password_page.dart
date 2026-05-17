@@ -6,7 +6,7 @@ import 'package:clothing_app_ui/features/auth/widgets/text_field.dart';
 import 'package:flutter/material.dart';
 
 class SignInPasswordPage extends StatefulWidget {
-  SignInPasswordPage({super.key});
+  const SignInPasswordPage({super.key});
 
   @override
   State<SignInPasswordPage> createState() => _SignInPasswordPageState();

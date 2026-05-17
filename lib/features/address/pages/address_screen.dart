@@ -23,7 +23,7 @@ class AddressScreen extends StatelessWidget {
                   onTap: () {
                     Navigator.pop(context);
                   },
-                  child: CircleAvatar(
+                  child: const CircleAvatar(
                     backgroundColor: AppColors.secondaryColor,
                     radius: 20,
                     child: Icon(
@@ -33,7 +33,7 @@ class AddressScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                Text(
+                const Text(
                   "Address",
                   style: TextStyle(
                     fontSize: 16,
@@ -54,9 +54,9 @@ class AddressScreen extends StatelessWidget {
                 separatorBuilder: (context, index) =>
                     const SizedBox(height: 12),
                 itemBuilder: (context, index) => InkWell(
-                  onTap: () {  Navigator.push(context, MaterialPageRoute(builder: (context) => AddAddress(),));},
+                  onTap: () {  Navigator.push(context, MaterialPageRoute(builder: (context) => const AddAddress(),));},
                   child: Container(
-                    padding: .symmetric(horizontal: 17),
+                    padding: const .symmetric(horizontal: 17),
                     width: .infinity,
                     height: 72,
                     decoration: BoxDecoration(
@@ -66,13 +66,13 @@ class AddressScreen extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: .spaceBetween,
                       children: [
-                        Text(
+                        const Text(
                           "2715 Ash Dr. San Jose, South Dakota 83475",
                           style: AppTextStyles.secondaryTextBlack,
                         ),
                         InkWell(
                           onTap: () {},
-                          child: Text(
+                          child: const Text(
                             "Edit",
                             style: TextStyle(
                               fontSize: 12,

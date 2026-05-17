@@ -53,7 +53,7 @@ class _MainwidgetState extends State<Mainwidget> {
             padding: const .symmetric(horizontal: 4),
             child: Text(
               widget.nameProducta,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 12,
                 fontWeight: .w400,
                 color: Colors.black,
@@ -65,7 +65,7 @@ class _MainwidgetState extends State<Mainwidget> {
             padding: const .symmetric(horizontal: 4),
             child: Text(
               "\$${widget.price}",
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 12,
                 fontWeight: .w700,
                 color: Colors.black,

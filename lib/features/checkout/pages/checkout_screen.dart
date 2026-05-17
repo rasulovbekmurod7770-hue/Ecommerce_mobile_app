@@ -28,7 +28,7 @@ class CheckoutScreen extends StatelessWidget {
                   onTap: () {
                     Navigator.pop(context);
                   },
-                  child: CircleAvatar(
+                  child: const CircleAvatar(
                     backgroundColor: AppColors.secondaryColor,
                     radius: 20,
                     child: Icon(
@@ -38,7 +38,7 @@ class CheckoutScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                Text(
+                const Text(
                   "Checkout",
                   style: TextStyle(
                     fontSize: 16,
@@ -53,14 +53,14 @@ class CheckoutScreen extends StatelessWidget {
             InkWell(
               onTap: () {},
               child: Container(
-                padding: .symmetric(horizontal: 12, vertical: 12),
+                padding: const .symmetric(horizontal: 12, vertical: 12),
                 width: .infinity,
                 height: 72,
                 decoration: BoxDecoration(
                   color: AppColors.secondaryColor,
                   borderRadius: .circular(8),
                 ),
-                child: Row(
+                child: const Row(
                   mainAxisAlignment: .spaceBetween,
                   children: [
                     Column(
@@ -90,14 +90,14 @@ class CheckoutScreen extends StatelessWidget {
             InkWell(
               onTap: () {},
               child: Container(
-                padding: .symmetric(horizontal: 12, vertical: 12),
+                padding: const .symmetric(horizontal: 12, vertical: 12),
                 width: .infinity,
                 height: 72,
                 decoration: BoxDecoration(
                   color: AppColors.secondaryColor,
                   borderRadius: .circular(8),
                 ),
-                child: Row(
+                child: const Row(
                   mainAxisAlignment: .spaceBetween,
                   children: [
                     Column(
@@ -130,7 +130,7 @@ class CheckoutScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: .spaceBetween,
                   children: [
-                    Text(
+                    const Text(
                       "Subtotal",
                       style: TextStyle(
                         fontSize: 16,
@@ -144,7 +144,7 @@ class CheckoutScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: .spaceBetween,
                   children: [
-                    Text(
+                    const Text(
                       "Shipping Cost",
                       style: TextStyle(
                         fontSize: 16,
@@ -158,7 +158,7 @@ class CheckoutScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: .spaceBetween,
                   children: [
-                    Text(
+                    const Text(
                       "Tax",
                       style: TextStyle(
                         fontSize: 16,
@@ -172,7 +172,7 @@ class CheckoutScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: .spaceBetween,
                   children: [
-                    Text(
+                    const Text(
                       "Total",
                       style: TextStyle(
                         fontSize: 16,
@@ -189,7 +189,7 @@ class CheckoutScreen extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: Container(
-        padding: .symmetric(vertical: 14),
+        padding: const .symmetric(vertical: 14),
         height: 80,
         child: padded(
           MainButton(

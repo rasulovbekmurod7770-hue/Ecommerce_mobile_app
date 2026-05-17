@@ -12,7 +12,7 @@ class NotificationExists extends StatelessWidget {
        Column(
         children: [
           const SizedBox(height: 71),
-          Center(
+          const Center(
             child: Text(
               "Notifications",
               style: TextStyle(
@@ -29,14 +29,14 @@ class NotificationExists extends StatelessWidget {
               itemCount: 3,
               separatorBuilder: (context, index) => const SizedBox(height: 8),
               itemBuilder: (context, index) => Container(
-                padding: .symmetric(horizontal: 12, vertical: 16),
+                padding: const .symmetric(horizontal: 12, vertical: 16),
                 height: 72,
                 width: .infinity,
                 decoration: BoxDecoration(
                   color: AppColors.secondaryColor,
                   borderRadius: .circular(8),
                 ),
-                child: Row(
+                child: const Row(
                   spacing: 21,
                   children: [
                     Icon(Icons.notifications, size: 40, color: Colors.grey,),

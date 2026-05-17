@@ -24,7 +24,7 @@ class PaymentScreen extends StatelessWidget {
                   onTap: () {
                     Navigator.pop(context);
                   },
-                  child: CircleAvatar(
+                  child: const CircleAvatar(
                     backgroundColor: AppColors.secondaryColor,
                     radius: 20,
                     child: Icon(
@@ -34,7 +34,7 @@ class PaymentScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                Text(
+                const Text(
                   "Add Address",
                   style: TextStyle(
                     fontSize: 16,
@@ -46,7 +46,7 @@ class PaymentScreen extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 32),
-            Text("Cards", style: AppTextStyles.secondaryTextBlack),
+            const Text("Cards", style: AppTextStyles.secondaryTextBlack),
             const SizedBox(height: 15),
             SizedBox(
               height: 156,
@@ -59,18 +59,18 @@ class PaymentScreen extends StatelessWidget {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => AddCard()),
+                        MaterialPageRoute(builder: (context) => const AddCard()),
                       );
                     },
                     child: Container(
-                      padding: .symmetric(horizontal: 12),
+                      padding: const .symmetric(horizontal: 12),
                       width: .infinity,
                       height: 72,
                       decoration: BoxDecoration(
                         borderRadius: .circular(8),
                         color: AppColors.secondaryColor,
                       ),
-                      child: Row(
+                      child: const Row(
                         mainAxisAlignment: .spaceBetween,
                         children: [
                           Row(
@@ -94,19 +94,19 @@ class PaymentScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 32),
-            Text("Paypal", style: AppTextStyles.secondaryTextBlack),
+            const Text("Paypal", style: AppTextStyles.secondaryTextBlack),
             const SizedBox(height: 15),
             InkWell(
               onTap: () {},
               child: Container(
-                padding: .symmetric(horizontal: 12),
+                padding: const .symmetric(horizontal: 12),
                 width: .infinity,
                 height: 72,
                 decoration: BoxDecoration(
                   borderRadius: .circular(8),
                   color: AppColors.secondaryColor,
                 ),
-                child: Row(
+                child: const Row(
                   mainAxisAlignment: .spaceBetween,
                   children: [
                     Text(

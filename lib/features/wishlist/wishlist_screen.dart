@@ -23,7 +23,7 @@ class WishlistScreen extends StatelessWidget {
                   onTap: () {
                     Navigator.pop(context);
                   },
-                  child: CircleAvatar(
+                  child: const CircleAvatar(
                     backgroundColor: AppColors.secondaryColor,
                     radius: 20,
                     child: Icon(
@@ -33,7 +33,7 @@ class WishlistScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                Text(
+                const Text(
                   "Wishlist",
                   style: TextStyle(
                     fontSize: 16,
@@ -59,17 +59,17 @@ class WishlistScreen extends StatelessWidget {
                   borderRadius: .circular(8),
                   color: AppColors.secondaryColor,
                 ),
-                child: Row(
+                child: const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Row(
                       children: [
-                        const Icon(
+                        Icon(
                           Icons.favorite_outline_rounded,
                           size: 24,
                           color: Colors.grey,
                         ),
-                        const SizedBox(width: 12),
+                        SizedBox(width: 12),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -77,13 +77,13 @@ class WishlistScreen extends StatelessWidget {
                               "My Favourite",
                               style: AppTextStyles.secondaryTextBlack,
                             ),
-                            const SizedBox(height: 2),
+                            SizedBox(height: 2),
                             Text("12 items", style: AppTextStyles.description),
                           ],
                         ),
                       ],
                     ),
-                    const Icon(Icons.arrow_forward_ios),
+                    Icon(Icons.arrow_forward_ios),
                   ],
                 ),
               ),

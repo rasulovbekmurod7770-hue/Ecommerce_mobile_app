@@ -14,13 +14,13 @@ class ProfileScreen extends StatelessWidget {
         Column(
           children: [
             const SizedBox(height: 129),
-            CircleAvatar(
+            const CircleAvatar(
               radius: 40,
               child: Image(image: AssetImage("assets/images/profile.png")),
             ),
             const SizedBox(height: 32),
             Container(
-              padding: .only(left: 16, top: 13, right: 16, bottom: 8),
+              padding: const .only(left: 16, top: 13, right: 16, bottom: 8),
               height: 96,
               width: .infinity,
               decoration: BoxDecoration(
@@ -30,7 +30,7 @@ class ProfileScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: .spaceBetween,
                 children: [
-                  Column(
+                  const Column(
                     children: [
                       Text(
                         "data",
@@ -60,7 +60,7 @@ class ProfileScreen extends StatelessWidget {
                   ),
                   TextButton(
                     onPressed: () {},
-                    child: Text(
+                    child: const Text(
                       "Edit",
                       style: TextStyle(
                         fontSize: 12,
@@ -73,7 +73,7 @@ class ProfileScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 26),
-            Column(
+            const Column(
               spacing: 8,
               children: [
                 inkwell(name: "Address"),
@@ -84,7 +84,7 @@ class ProfileScreen extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 35,), 
-            Text("Sign out", style: TextStyle(fontSize: 16, fontWeight: .w700, color: Color(0xFFFA3636)),), 
+            const Text("Sign out", style: TextStyle(fontSize: 16, fontWeight: .w700, color: Color(0xFFFA3636)),), 
           ],
         ),
       ),

@@ -27,7 +27,7 @@ class SearchScreen extends StatelessWidget {
                   onTap: () {
                     Navigator.pop(context);
                   },
-                  child: CircleAvatar(
+                  child: const CircleAvatar(
                     backgroundColor: AppColors.secondaryColor,
                     radius: 20,
                     child: Icon(
@@ -40,8 +40,8 @@ class SearchScreen extends StatelessWidget {
                 Expanded(
                   child: TextFormField(
                     decoration: InputDecoration(
-                      prefixIcon: Icon(CupertinoIcons.search),
-                      hint: Text(
+                      prefixIcon: const Icon(CupertinoIcons.search),
+                      hint: const Text(
                         "Search",
                         style: TextStyle(fontSize: 12, fontWeight: .w500),
                       ),
@@ -57,7 +57,7 @@ class SearchScreen extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 16),
-            Text("Shop by Categories", style: AppTextStyles.heading),
+            const Text("Shop by Categories", style: AppTextStyles.heading),
             const SizedBox(height: 14),
             Column(
               spacing: 8,
@@ -65,27 +65,27 @@ class SearchScreen extends StatelessWidget {
                 ListtileW(
                   image: "assets/images/categoryimage1.png",
                   text: "Hoodies",
-                  widget: HoodiesPage(),
+                  widget: const HoodiesPage(),
                 ),
                 ListtileW(
                   image: "assets/images/categoryimage2.png",
                   text: "Accessories",
-                  widget: HomePage(),
+                  widget: const HomePage(),
                 ),
                 ListtileW(
                   image: "assets/images/categorimage3.png",
                   text: "Shorts",
-                  widget: HomePage(),
+                  widget: const HomePage(),
                 ),
                 ListtileW(
                   image: "assets/images/categoryimage4.png",
                   text: "Shoes",
-                  widget: HomePage(),
+                  widget: const HomePage(),
                 ),
                 ListtileW(
                   image: "assets/images/gategoryimage5.png",
                   text: "Bags",
-                  widget: HomePage(),
+                  widget: const HomePage(),
                 ),
               ],
             ),

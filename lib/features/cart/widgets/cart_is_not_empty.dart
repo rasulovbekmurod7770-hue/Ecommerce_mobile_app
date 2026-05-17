@@ -29,7 +29,7 @@ class _CartisNotEmptyState extends State<CartisNotEmpty> {
                 onTap: () {
                   Navigator.pop(context);
                 },
-                child: CircleAvatar(
+                child: const CircleAvatar(
                   backgroundColor: AppColors.secondaryColor,
                   radius: 20,
                   child: Icon(
@@ -39,7 +39,7 @@ class _CartisNotEmptyState extends State<CartisNotEmpty> {
                   ),
                 ),
               ),
-              Text(
+              const Text(
                 "Cart",
                 style: TextStyle(
                   fontSize: 16,
@@ -57,7 +57,7 @@ class _CartisNotEmptyState extends State<CartisNotEmpty> {
               const SizedBox(),
               TextButton(
                 onPressed: () {},
-                child: Text(
+                child: const Text(
                   "Remove All",
                   style: AppTextStyles.secondaryTextBlack,
                   textAlign: .end,
@@ -70,10 +70,10 @@ class _CartisNotEmptyState extends State<CartisNotEmpty> {
             padding: const .symmetric(horizontal: 8, vertical: 8),
             height: 80,
             width: .infinity,
-            decoration: BoxDecoration(color: AppColors.secondaryColor),
+            decoration: const BoxDecoration(color: AppColors.secondaryColor),
             child: Row(
               children: [
-                SizedBox(
+                const SizedBox(
                   width: 64,
                   height: 64,
                   child: Image(
@@ -90,7 +90,7 @@ class _CartisNotEmptyState extends State<CartisNotEmpty> {
                         Row(
                           mainAxisAlignment: .spaceBetween,
                           children: [
-                            Text(
+                            const Text(
                               "Men's Harrington Jacket",
                               style: TextStyle(
                                 fontWeight: .w500,
@@ -100,7 +100,7 @@ class _CartisNotEmptyState extends State<CartisNotEmpty> {
                             ),
                             Text(
                               "\$${cart.priceOfJacket}",
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontWeight: .w700,
                                 fontSize: 12,
                                 color: AppColors.colorBlack,
@@ -112,7 +112,7 @@ class _CartisNotEmptyState extends State<CartisNotEmpty> {
                         Row(
                           mainAxisAlignment: .spaceBetween,
                           children: [
-                            Row(
+                            const Row(
                               spacing: 3,
                               children: [
                                 Text("size", style: AppTextStyles.description),
@@ -126,7 +126,7 @@ class _CartisNotEmptyState extends State<CartisNotEmpty> {
                                 ),
                               ],
                             ),
-                            Row(
+                            const Row(
                               spacing: 3,
                               children: [
                                 Text("color", style: AppTextStyles.description),
@@ -150,7 +150,7 @@ class _CartisNotEmptyState extends State<CartisNotEmpty> {
                                     onPressed: () {
                                       context.read<CartProvider>().addButton();
                                     },
-                                    icon: Icon(
+                                    icon: const Icon(
                                       Icons.add,
                                       color: AppColors.colorWhite,
                                       size: 6,
@@ -159,7 +159,7 @@ class _CartisNotEmptyState extends State<CartisNotEmpty> {
                                 ),
                                 Text(
                                   "${cart.productCount}",
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                     color: AppColors.colorBlack,
                                     fontSize: 16,
                                     fontWeight: .w500,
@@ -176,7 +176,7 @@ class _CartisNotEmptyState extends State<CartisNotEmpty> {
                                         null;
                                       }
                                     },
-                                    icon: Icon(
+                                    icon: const Icon(
                                       Icons.remove,
                                       color: AppColors.colorWhite,
                                       size: 6,
@@ -201,7 +201,7 @@ class _CartisNotEmptyState extends State<CartisNotEmpty> {
               Row(
                 mainAxisAlignment: .spaceBetween,
                 children: [
-                  Text(
+                  const Text(
                     "Subtotal",
                     style: TextStyle(
                       fontSize: 16,
@@ -215,7 +215,7 @@ class _CartisNotEmptyState extends State<CartisNotEmpty> {
               Row(
                 mainAxisAlignment: .spaceBetween,
                 children: [
-                  Text(
+                  const Text(
                     "Shipping Cost",
                     style: TextStyle(
                       fontSize: 16,
@@ -229,7 +229,7 @@ class _CartisNotEmptyState extends State<CartisNotEmpty> {
               Row(
                 mainAxisAlignment: .spaceBetween,
                 children: [
-                  Text(
+                  const Text(
                     "Tax",
                     style: TextStyle(
                       fontSize: 16,
@@ -243,7 +243,7 @@ class _CartisNotEmptyState extends State<CartisNotEmpty> {
               Row(
                 mainAxisAlignment: .spaceBetween,
                 children: [
-                  Text(
+                  const Text(
                     "Total",
                     style: TextStyle(
                       fontSize: 16,
@@ -264,8 +264,8 @@ class _CartisNotEmptyState extends State<CartisNotEmpty> {
                   mainAxisAlignment: .spaceBetween,
                   children: [
                     Container(
-                      margin: .only(left: 8, top: 8, bottom: 8),
-                      child: Row(
+                      margin: const .only(left: 8, top: 8, bottom: 8),
+                      child: const Row(
                         spacing: 15,
                         children: [
                           Icon(Icons.countertops_outlined, size: 24, color: Color(0xFF5FB567),),
@@ -276,7 +276,7 @@ class _CartisNotEmptyState extends State<CartisNotEmpty> {
                         ],
                       ),
                     ),
-                    CircleAvatar(
+                    const CircleAvatar(
                       backgroundColor: AppColors.primaryColor,
                       radius: 20,
                       child: Icon(Icons.arrow_forward_ios),

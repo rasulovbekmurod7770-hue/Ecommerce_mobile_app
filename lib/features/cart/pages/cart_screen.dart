@@ -19,11 +19,11 @@ class _CartScreenState extends State<CartScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.backgroundLight,
-      body: isEmpty ? CartIsEmpty() : CartisNotEmpty(),
+      body: isEmpty ? const CartIsEmpty() : const CartisNotEmpty(),
       bottomNavigationBar: isEmpty
           ? null
           : Container(
-              padding: .symmetric(vertical: 14),
+              padding: const .symmetric(vertical: 14),
               height: 80,
               child: padded(
                 MainButton(

@@ -99,13 +99,13 @@ class _OrdersExistState extends State<OrdersExist> {
                   color: AppColors.secondaryColor,
                   borderRadius: BorderRadius.circular(8),
                 ),
-                child: Row(
+                child: const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Row(
                       children: [
-                        const Icon(Icons.receipt, size: 40, color: Colors.grey),
-                        const SizedBox(width: 12),
+                        Icon(Icons.receipt, size: 40, color: Colors.grey),
+                        SizedBox(width: 12),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -113,13 +113,13 @@ class _OrdersExistState extends State<OrdersExist> {
                               "Order #456765",
                               style: AppTextStyles.secondaryTextBlack,
                             ),
-                            const SizedBox(height: 2),
+                            SizedBox(height: 2),
                             Text("4 items", style: AppTextStyles.description),
                           ],
                         ),
                       ],
                     ),
-                    const Icon(Icons.arrow_forward_ios, size: 16),
+                    Icon(Icons.arrow_forward_ios, size: 16),
                   ],
                 ),
               ),

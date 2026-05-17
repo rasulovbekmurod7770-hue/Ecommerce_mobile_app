@@ -1,4 +1,3 @@
-import 'package:clothing_app_ui/features/auth/pages/sign_in_page.dart';
 import 'package:clothing_app_ui/features/auth/widgets/main_button.dart';
 import 'package:flutter/material.dart';
 

@@ -10,7 +10,7 @@ class OrdersScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.backgroundLight,
-      body: isOrdersEmpty ? OrdersExist() : NoOrders(),
+      body: isOrdersEmpty ? const OrdersExist() : const NoOrders(),
     );
   }
 }

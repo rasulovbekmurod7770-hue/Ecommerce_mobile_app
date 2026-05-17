@@ -1,12 +1,12 @@
-import 'package:clothing_app_ui/features/auth/cubit/auth_state.dart';
-import 'package:clothing_app_ui/features/auth/models/auth_model.dart';
+import 'package:clothing_app_ui/features/auth/sign_up/cubit/sign_up_state.dart';
+import 'package:clothing_app_ui/features/auth/sign_up/models/sign_up_model.dart';
 import 'package:clothing_app_ui/features/auth/repo/auth_repo.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class AuthCubit extends Cubit<AuthState>{
-  AuthCubit() : super(const AuthInitial());
+class SignUpCubit extends Cubit<SignUpState> {
+  SignUpCubit() : super(const AuthInitial());
 
-  Future<void> createUser(AuthModel user) async {
+  Future<void> createUser(SignUpModel user) async {
     emit(const AuthLoading());
     try {
       final newUser = AuthRepo().createUser(user);

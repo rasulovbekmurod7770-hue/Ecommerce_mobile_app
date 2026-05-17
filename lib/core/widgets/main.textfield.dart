@@ -15,10 +15,10 @@ class Maintextdield extends StatelessWidget {
       child: TextField(
         decoration: InputDecoration(
           
-          prefixIcon: Icon(CupertinoIcons.search, size: 16),
+          prefixIcon: const Icon(CupertinoIcons.search, size: 16),
           hint: Container(
-            margin: .only(top: 10, ),
-            child: Text(
+            margin: const .only(top: 10, ),
+            child: const Text(
               "Search",
               style: TextStyle(
                 color: Colors.black,

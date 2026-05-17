@@ -1,10 +1,10 @@
-class AuthModel {
+class SignUpModel {
   final String firstName;
   final String lastName;
   final String email;
   final String password;
 
-  AuthModel({
+  SignUpModel({
     required this.firstName,
     required this.lastName,
     required this.email,
@@ -12,8 +12,8 @@ class AuthModel {
   });
 
   // Convert JSON to Dart object
-  factory AuthModel.fromJson(Map<String, dynamic> json) {
-    return AuthModel(
+  factory SignUpModel.fromJson(Map<String, dynamic> json) {
+    return SignUpModel(
       firstName: json['first_name'] ?? '',
       lastName: json['last_name'] ?? '',
       email: json['email'] ?? '',

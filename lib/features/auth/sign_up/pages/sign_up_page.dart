@@ -1,7 +1,7 @@
 import 'package:clothing_app_ui/core/constants/app_colors.dart';
 import 'package:clothing_app_ui/core/constants/app_text_styles.dart';
-import 'package:clothing_app_ui/features/auth/cubit/auth_cubit.dart';
-import 'package:clothing_app_ui/features/auth/models/auth_model.dart';
+import 'package:clothing_app_ui/features/auth/sign_up/cubit/sign_up_cubit.dart';
+import 'package:clothing_app_ui/features/auth/sign_up/models/sign_up_model.dart';
 import 'package:clothing_app_ui/features/auth/pages/forgot_password.dart';
 import 'package:clothing_app_ui/features/auth/pages/sign_in_page.dart';
 import 'package:clothing_app_ui/features/auth/widgets/main_button.dart';
@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class SignUpPage extends StatefulWidget {
-  SignUpPage({super.key});
+  const SignUpPage({super.key});
 
   @override
   State<SignUpPage> createState() => _SignUpPageState();
@@ -82,14 +82,17 @@ class _SignUpPageState extends State<SignUpPage> {
               height: 49,
               width: .infinity,
               onPressed: () {
-                final AuthModel newuser = AuthModel(
+                final SignUpModel newuser = SignUpModel(
                   firstName: firstNameController.text.toString(),
                   lastName: lastNameController.text.toString(),
                   email: emailController.text.toString(),
                   password: passwordController.text.toString(),
                 );
-                context.read<AuthCubit>().createUser(newuser);
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const SignInPage(),));
+                context.read<SignUpCubit>().createUser(newuser);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SignInPage()),
+                );
               },
             ),
             const SizedBox(height: 40),

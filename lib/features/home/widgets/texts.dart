@@ -27,7 +27,7 @@ class Texts extends StatelessWidget {
               ),
             );
           },
-          child: Text(
+          child: const Text(
             "See all",
             style: TextStyle(
               fontSize: 16,

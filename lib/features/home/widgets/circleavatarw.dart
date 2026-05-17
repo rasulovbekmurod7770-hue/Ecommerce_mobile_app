@@ -15,7 +15,7 @@ class CircleAvatarW extends StatelessWidget {
           child: Image(image: AssetImage(image)),
         ), 
         const SizedBox(height: 5,), 
-        Text(text, style: TextStyle(color: Colors.black, fontSize: 12, fontWeight: .w400),)
+        Text(text, style: const TextStyle(color: Colors.black, fontSize: 12, fontWeight: .w400),)
       ],
     );
   }

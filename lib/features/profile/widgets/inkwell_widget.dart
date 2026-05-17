@@ -14,7 +14,7 @@ class inkwell extends StatelessWidget {
     return InkWell(
       onTap: () {},
       child: Container(
-        padding: .all(16),
+        padding: const .all(16),
         height: 56,
         width: .infinity,
         decoration: BoxDecoration(
@@ -28,7 +28,7 @@ class inkwell extends StatelessWidget {
               name,
               style: AppTextStyles.secondaryTextBlack,
             ),
-            Icon(Icons.arrow_forward_ios, size: 24),
+            const Icon(Icons.arrow_forward_ios, size: 24),
           ],
         ),
       ),

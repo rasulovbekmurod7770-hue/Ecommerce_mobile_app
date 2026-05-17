@@ -23,7 +23,7 @@ class Categories extends StatelessWidget {
               onTap: () {
                 Navigator.pop(context);
               },
-              child: CircleAvatar(
+              child: const CircleAvatar(
                 backgroundColor: AppColors.secondaryColor,
                 radius: 20,
                 child: Icon(
@@ -34,16 +34,16 @@ class Categories extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
-            Text("Shop by Categories", style: AppTextStyles.heading),
+            const Text("Shop by Categories", style: AppTextStyles.heading),
             const SizedBox(height: 14),
             Column(
               spacing: 8,
               children: [
-                ListtileW(image: "assets/images/categoryimage1.png", text: "Hoodies", widget: HoodiesPage(),),
-                ListtileW(image: "assets/images/categoryimage2.png", text: "Accessories", widget: HomePage()), 
-                ListtileW(image: "assets/images/categorimage3.png", text: "Shorts", widget: HomePage()), 
-                ListtileW(image: "assets/images/categoryimage4.png", text: "Shoes", widget: HomePage()), 
-                ListtileW(image: "assets/images/gategoryimage5.png", text: "Bags", widget: HomePage())
+                ListtileW(image: "assets/images/categoryimage1.png", text: "Hoodies", widget: const HoodiesPage(),),
+                ListtileW(image: "assets/images/categoryimage2.png", text: "Accessories", widget: const HomePage()), 
+                ListtileW(image: "assets/images/categorimage3.png", text: "Shorts", widget: const HomePage()), 
+                ListtileW(image: "assets/images/categoryimage4.png", text: "Shoes", widget: const HomePage()), 
+                ListtileW(image: "assets/images/gategoryimage5.png", text: "Bags", widget: const HomePage())
               ],
             ),
           ],

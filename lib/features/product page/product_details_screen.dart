@@ -1,7 +1,6 @@
 import 'package:clothing_app_ui/core/constants/app_colors.dart';
 import 'package:clothing_app_ui/core/constants/app_text_styles.dart';
 import 'package:clothing_app_ui/features/auth/widgets/main_button.dart';
-import 'package:clothing_app_ui/features/home/pages/home_page.dart';
 import 'package:clothing_app_ui/features/home/widgets/padding.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

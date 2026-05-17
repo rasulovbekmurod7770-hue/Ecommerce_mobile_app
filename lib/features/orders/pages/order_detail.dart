@@ -33,7 +33,7 @@ class _OrderDetailState extends State<OrderDetail> {
                   onTap: () {
                     Navigator.pop(context);
                   },
-                  child: CircleAvatar(
+                  child: const CircleAvatar(
                     backgroundColor: AppColors.secondaryColor,
                     radius: 20,
                     child: Icon(
@@ -43,7 +43,7 @@ class _OrderDetailState extends State<OrderDetail> {
                     ),
                   ),
                 ),
-                Text(
+                const Text(
                   "Order #456765",
                   style: TextStyle(
                     fontSize: 16,
@@ -62,7 +62,7 @@ class _OrderDetailState extends State<OrderDetail> {
                 backgroundColor: isDelivered
                     ? AppColors.primaryColor
                     : AppColors.secondaryColor,
-                child: Icon(
+                child: const Icon(
                   Icons.check,
                   size: 8,
                   color: AppColors.backgroundLight,
@@ -97,7 +97,7 @@ class _OrderDetailState extends State<OrderDetail> {
                 backgroundColor: isShipped
                     ? AppColors.primaryColor
                     : AppColors.secondaryColor,
-                child: Icon(
+                child: const Icon(
                   Icons.check,
                   size: 8,
                   color: AppColors.backgroundLight,
@@ -132,7 +132,7 @@ class _OrderDetailState extends State<OrderDetail> {
                 backgroundColor: isConfirmed
                     ? AppColors.primaryColor
                     : AppColors.secondaryColor,
-                child: Icon(
+                child: const Icon(
                   Icons.check,
                   size: 8,
                   color: AppColors.backgroundLight,
@@ -167,7 +167,7 @@ class _OrderDetailState extends State<OrderDetail> {
                 backgroundColor: isPlaced
                     ? AppColors.primaryColor
                     : AppColors.secondaryColor,
-                child: Icon(
+                child: const Icon(
                   Icons.check,
                   size: 8,
                   color: AppColors.backgroundLight,
@@ -196,7 +196,7 @@ class _OrderDetailState extends State<OrderDetail> {
             ),
             const SizedBox(height: 40),
 
-            Text("Order Items", style: AppTextStyles.secondaryTextBlack),
+            const Text("Order Items", style: AppTextStyles.secondaryTextBlack),
             const SizedBox(height: 16),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 15),
@@ -204,13 +204,13 @@ class _OrderDetailState extends State<OrderDetail> {
                 color: AppColors.secondaryColor,
                 borderRadius: BorderRadius.circular(8),
               ),
-              child: Row(
+              child: const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
                     children: [
-                      const Icon(Icons.receipt, size: 40, color: Colors.grey),
-                      const SizedBox(width: 12),
+                      Icon(Icons.receipt, size: 40, color: Colors.grey),
+                      SizedBox(width: 12),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -218,13 +218,13 @@ class _OrderDetailState extends State<OrderDetail> {
                             "Order #456765",
                             style: AppTextStyles.secondaryTextBlack,
                           ),
-                          const SizedBox(height: 2),
+                          SizedBox(height: 2),
                           Text("4 items", style: AppTextStyles.description),
                         ],
                       ),
                     ],
                   ),
-                  const TextButton(
+                  TextButton(
                     onPressed: AboutDialog.adaptive,
                     child: Text(
                       "View All",
@@ -239,7 +239,7 @@ class _OrderDetailState extends State<OrderDetail> {
               ),
             ),
             const SizedBox(height: 40),
-            Text("Shipping details", style: AppTextStyles.secondaryTextBlack),
+            const Text("Shipping details", style: AppTextStyles.secondaryTextBlack),
             const SizedBox(height: 13),
             Container(
               padding: const .all(11),
@@ -249,7 +249,7 @@ class _OrderDetailState extends State<OrderDetail> {
                 borderRadius: .circular(8),
                 color: AppColors.secondaryColor,
               ),
-              child: Text(
+              child: const Text(
                 "2715 Ash Dr. San Jose, South Dakota 83475 \n121-224-7890",
                 style: AppTextStyles.secondaryTextBlack,
               ),

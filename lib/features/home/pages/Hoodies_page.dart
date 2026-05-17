@@ -21,7 +21,7 @@ class HoodiesPage extends StatelessWidget {
                 onTap: () {
                   Navigator.pop(context);
                 },
-                child: CircleAvatar(
+                child: const CircleAvatar(
                   backgroundColor: AppColors.secondaryColor,
                   radius: 20,
                   child: Icon(
@@ -32,7 +32,7 @@ class HoodiesPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 16),
-              Text(
+              const Text(
                 "Hoodies (240)",
                 style: TextStyle(
                   color: Colors.black,
