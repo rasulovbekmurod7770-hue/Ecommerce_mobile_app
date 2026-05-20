@@ -11,6 +11,7 @@ class SignUpCubit extends Cubit<SignUpState> {
     try {
       final newUser = AuthRepo().createUser(user);
       emit(AuthOperationSucces(massage: "post successfully created "));
+      print("all good");
     } catch (e) {
       emit(AuthError(message: e.toString()));
     }

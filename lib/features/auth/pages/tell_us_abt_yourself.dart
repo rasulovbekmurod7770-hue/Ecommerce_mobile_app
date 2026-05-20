@@ -41,6 +41,8 @@ class _TellUsAbtYourselfState extends State<TellUsAbtYourself> {
               spacing: 20,
               children: [
                 InkWell(
+                  borderRadius: BorderRadius.circular(100),
+                  
                   onTap: () {
                     setState(() {
                       onTapped = true;
@@ -69,6 +71,7 @@ class _TellUsAbtYourselfState extends State<TellUsAbtYourself> {
                   ),
                 ),
                 InkWell(
+                  borderRadius: BorderRadius.circular(100),
                   onTap: () {
                     setState(() {
                       onTapped2 = true;

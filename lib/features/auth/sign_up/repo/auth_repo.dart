@@ -20,6 +20,7 @@ class AuthRepo {
       if (response.statusCode != 200 && response.statusCode != 201) {
         throw data.toString();
       }
+      print(data);
       return SignUpModel.fromJson(data as Map<String, dynamic>);
     } catch (e) {
       rethrow;
@@ -29,7 +30,7 @@ class AuthRepo {
   Future<SignUpModel> getUsers(SignInModel user) async {
     try {
       final response = await http.post(
-        Uri.parse("$baseUrl/Authentication", ),
+        Uri.parse("$baseUrl/Authentication/login_auth_login_post", ),
         
         headers: {"Accept": "application/json"},
         body: jsonEncode(user.toJson()),
