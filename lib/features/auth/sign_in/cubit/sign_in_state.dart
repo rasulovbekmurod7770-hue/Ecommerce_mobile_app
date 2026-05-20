@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 abstract class SignInState {
   const SignInState();
 }
@@ -12,12 +14,23 @@ class SignInLoading extends SignInState {
 }
 
 class SignInSuccess extends SignInState {
-  const SignInSuccess();
+  final String massage;
+  const SignInSuccess({required this.massage});
 }
 
-// 4. Failure State: Show a red error message or SnackBar
 class SignInFailure extends SignInState {
   final String errorMessage;
+  SignInFailure({required this.errorMessage});
+}
 
-  SignInFailure(this.errorMessage);
+class TokenChecking extends SignInState {
+  const TokenChecking();
+}
+
+class TokenExists extends SignInState {
+  const TokenExists();
+}
+
+class TokenNotFound extends SignInState {
+  const TokenNotFound();
 }
