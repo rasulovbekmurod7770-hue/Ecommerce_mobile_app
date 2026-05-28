@@ -9,8 +9,8 @@ class SignUpCubit extends Cubit<SignUpState> {
   Future<void> createUser(SignUpModel user) async {
     emit(const AuthLoading());
     try {
-      final newUser = AuthRepo().createUser(user);
-      emit(AuthOperationSucces(massage: "post successfully created "));
+      final newUser = await AuthRepo().createUser(user);
+      emit(AuthOperationSucces(userId: newUser.id));
       print("all good");
     } catch (e) {
       emit(AuthError(message: e.toString()));

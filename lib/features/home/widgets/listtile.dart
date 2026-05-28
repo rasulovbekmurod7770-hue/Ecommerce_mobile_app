@@ -30,8 +30,12 @@ class ListtileW extends StatelessWidget {
         },
         child: ListTile(
           selectedColor: AppColors.secondaryColor,
-          leading: Image(
-            image: AssetImage(image),
+          leading: CircleAvatar(
+            radius: 20,
+            child: Image(
+              fit: .cover,
+              image: NetworkImage(image),
+            ),
           ),
           title: Text(text),
         ),

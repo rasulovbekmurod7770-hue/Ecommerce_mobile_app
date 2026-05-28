@@ -25,7 +25,7 @@ final class AuthLoaded extends SignUpState {
 }
 
 final class AuthOperationSucces extends SignUpState {
-  final String massage;
+  final int userId;
 
-  AuthOperationSucces({required this.massage});
+  AuthOperationSucces({required this.userId});
 }

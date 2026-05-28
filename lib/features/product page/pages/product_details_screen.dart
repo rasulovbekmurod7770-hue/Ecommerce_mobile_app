@@ -2,8 +2,10 @@ import 'package:clothing_app_ui/core/constants/app_colors.dart';
 import 'package:clothing_app_ui/core/constants/app_text_styles.dart';
 import 'package:clothing_app_ui/features/auth/widgets/main_button.dart';
 import 'package:clothing_app_ui/features/home/widgets/padding.dart';
+import 'package:clothing_app_ui/features/product%20page/cubit/products_cubit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
   const ProductDetailsScreen({super.key});
@@ -32,6 +34,13 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
   bool ontapped = true;
 
   List<String> sizes = ["S", "M", "L", "XL", "XXL"];
+
+  @override
+  void initState() {
+    context.read<ProductsCubit>().getProducts();
+
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

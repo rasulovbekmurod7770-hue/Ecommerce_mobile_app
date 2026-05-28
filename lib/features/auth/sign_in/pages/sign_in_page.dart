@@ -4,10 +4,11 @@ import 'package:clothing_app_ui/features/auth/sign_in/cubit/sign_in_cubit.dart';
 import 'package:clothing_app_ui/features/auth/sign_in/cubit/sign_in_state.dart';
 import 'package:clothing_app_ui/features/auth/sign_in/models/sign_in_model.dart';
 import 'package:clothing_app_ui/features/auth/sign_up/pages/sign_up_page.dart';
+import 'package:clothing_app_ui/features/auth/tell_us_abt_yourelf/pages/tell_us_abt_yourself.dart';
 import 'package:clothing_app_ui/features/auth/widgets/main_button.dart';
 import 'package:clothing_app_ui/features/auth/widgets/signinways_button.dart';
 import 'package:clothing_app_ui/features/auth/widgets/text_field.dart';
-import 'package:clothing_app_ui/features/auth/pages/tell_us_abt_yourself.dart';
+// import 'package:clothing_app_ui/features/auth/pages/tell_us_abt_yourself.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -45,7 +46,7 @@ class _SignInPageState extends State<SignInPage> {
         if (state is SignInSuccess) {
           Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(builder: (_) => const TellUsAbtYourself()),
+            MaterialPageRoute(builder: (_) => const TellUsAbtYourself(userId: 1,)),
             (_) => false,
           );
         } else if (state is SignInFailure) {
