@@ -1,6 +1,6 @@
 class ProductModel {
   final int id;
-  final String name;  
+  final String name;
   final String description;
   final double price;
   final double oldPrice;
@@ -11,7 +11,7 @@ class ProductModel {
   final List<String> images;
   final List<ReviewModel> reviews;
   final int categoryId;
-  final bool? isWishlisted;
+  final bool isWishlisted;
 
   ProductModel({
     required this.id,
@@ -26,28 +26,33 @@ class ProductModel {
     required this.images,
     required this.reviews,
     required this.categoryId,
-    this.isWishlisted,
+    required this.isWishlisted,
   });
 
   factory ProductModel.fromJson(Map<String, dynamic> json) {
-    return ProductModel(
-      id: json['id'] is num ? (json['id'] as num).toInt() : 0,
-      name: json['name'] ?? '',
-      description: json['description'] ?? '',
-      price: json['price'] is num ? (json['price'] as num).toDouble() : 0.0,
-      oldPrice: json['old_price'] is num ? (json['old_price'] as num).toDouble() : 0.0,
-      isFreeShipping: json['is_free_shipping'] ?? false,
-      gender: json['gender'] ?? '',
-      colors: List<String>.from(json['colors'] ?? []),
-      sizes: List<String>.from(json['sizes'] ?? []),
-      images: List<String>.from(json['images'] ?? []),
-      reviews: (json['reviews'] as List? ?? [])
-          .map((e) => ReviewModel.fromJson(e))
-          .toList(),
-      categoryId: json['category_id'] is num ? (json['category_id'] as num).toInt() : 0,
-      isWishlisted: json['is_wishlisted'],
-    );
-  }
+  return ProductModel(
+    // Force a strict check: if it's not a num/int, fallback cleanly
+    id: json['id'] is num ? (json['id'] as num).toInt() : 0,
+    
+    name: json['name'] ?? '',
+    description: json['description'] ?? '',
+    price: json['price'] is num ? (json['price'] as num).toDouble() : 0.0,
+    oldPrice: json['old_price'] is num ? (json['old_price'] as num).toDouble() : 0.0,
+    isFreeShipping: json['is_free_shipping'] ?? false,
+    gender: json['gender'] ?? '',
+    colors: List<String>.from(json['colors'] ?? []),
+    sizes: List<String>.from(json['sizes'] ?? []),
+    images: List<String>.from(json['images'] ?? []),
+    reviews: (json['reviews'] as List? ?? [])
+        .map((e) => ReviewModel.fromJson(e))
+        .toList(),
+        
+    // Force a strict check here as well
+    categoryId: json['category_id'] is num ? (json['category_id'] as num).toInt() : 0,
+    
+    isWishlisted: json['is_wishlisted'] ?? false,
+  );
+}
 
   Map<String, dynamic> toJson() {
     return {
@@ -87,7 +92,7 @@ class ReviewModel {
     return ReviewModel(
       userName: json['user_name'] ?? '',
       userImage: json['user_image'] ?? '',
-      stars: json['stars'] is num ? (json['stars'] as num).toInt() : 0,
+      stars: json['stars'] ?? 0,
       comment: json['comment'] ?? '',
       date: json['date'] ?? '',
     );

@@ -1,14 +1,28 @@
 import 'package:clothing_app_ui/core/constants/app_colors.dart';
 import 'package:clothing_app_ui/core/widgets/main.textfield.dart';
 import 'package:clothing_app_ui/features/home/categories/pages/categories.dart';
+import 'package:clothing_app_ui/features/home/cubit/product_cubit.dart';
+import 'package:clothing_app_ui/features/home/cubit/product_state.dart';
 import 'package:clothing_app_ui/features/home/widgets/circleavatarw.dart';
 import 'package:clothing_app_ui/features/home/widgets/main_widget.dart';
 import 'package:clothing_app_ui/features/home/widgets/padding.dart';
 import 'package:clothing_app_ui/features/home/widgets/texts.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    context.read<ProductCubit>().getProducts();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -123,31 +137,35 @@ class HomePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
-            Padding(
-              padding: const .only(left: 24),
-
-              child: SingleChildScrollView(
-                scrollDirection: .horizontal,
-                child: Row(
-                  spacing: 12,
-                  children: [
-                    Mainwidget(
-                      image: 'assets/images/topsellingi1.png',
-                      nameProducta: "Men's Harrington Jacket",
-                      price: "148.00",
-                    ),
-                    Mainwidget(
-                      image: "assets/images/topselling2.png",
-                      nameProducta: "Max Cirro Men's Slides",
-                      price: "55.00",
-                    ),
-                    Mainwidget(
-                      image: 'assets/images/topsellingi1.png',
-                      nameProducta: "Men's Harrington Jacket",
-                      price: "148.00",
-                    ),
-                  ],
-                ),
+            SizedBox(
+              height: 281,
+              child: BlocBuilder<ProductCubit, ProductState>(
+                builder: (context, state) {
+                  if (state is ProductsLoading) {
+                    return const Center(child: CircularProgressIndicator());
+                  } else if (state is ProductError) {
+                    return Center(child: Text(state.message));
+                  } else if (state is ProductsLoaded) {
+                    return ListView.separated(
+                      padding: const EdgeInsets.only(left: 24),
+                      scrollDirection: Axis.horizontal,
+                      itemCount: state.products.length,
+                      separatorBuilder: (context, index) =>
+                          const SizedBox(width: 12),
+                      itemBuilder: (context, index) {
+                        final product = state.products[index];
+                        return Mainwidget(
+                          image: product.images.isNotEmpty
+                              ? product.images[0]
+                              : '',
+                          nameProducta: product.name,
+                          price: product.price,
+                        );
+                      },
+                    );
+                  }
+                  return const SizedBox();
+                },
               ),
             ),
             const SizedBox(height: 24),
@@ -159,37 +177,40 @@ class HomePage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
-            Padding(
-              padding: const .only(left: 24),
-
-              child: SingleChildScrollView(
-                scrollDirection: .horizontal,
-                child: Row(
-                  spacing: 12,
-                  children: [
-                    Mainwidget(
-                      image: 'assets/images/topsellingi1.png',
-                      nameProducta: "Men's Harrington Jacket",
-                      price: "148.00",
-                    ),
-                    Mainwidget(
-                      image: "assets/images/topselling2.png",
-                      nameProducta: "Max Cirro Men's Slides",
-                      price: "55.00",
-                    ),
-                    Mainwidget(
-                      image: 'assets/images/topsellingi1.png',
-                      nameProducta: "Men's Harrington Jacket",
-                      price: "148.00",
-                    ),
-                  ],
-                ),
+            SizedBox(
+              height: 281,
+              child: BlocBuilder<ProductCubit, ProductState>(
+                builder: (context, state) {
+                  if (state is ProductsLoading) {
+                    return const Center(child: CircularProgressIndicator());
+                  } else if (state is ProductError) {
+                    return Center(child: Text(state.message));
+                  } else if (state is ProductsLoaded) {
+                    return ListView.separated(
+                      padding: const EdgeInsets.only(left: 24),
+                      scrollDirection: Axis.horizontal,
+                      itemCount: state.products.length,
+                      separatorBuilder: (context, index) =>
+                          const SizedBox(width: 12),
+                      itemBuilder: (context, index) {
+                        final product = state.products[index];
+                        return Mainwidget(
+                          image: product.images.isNotEmpty
+                              ? product.images[0]
+                              : '',
+                          nameProducta: product.name,
+                          price: product.price,
+                        );
+                      },
+                    );
+                  }
+                  return const SizedBox();
+                },
               ),
             ),
           ],
         ),
       ),
-      
     );
   }
 }

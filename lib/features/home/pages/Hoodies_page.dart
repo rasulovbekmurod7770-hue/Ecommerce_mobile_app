@@ -48,12 +48,11 @@ class HoodiesPage extends StatelessWidget {
                   Mainwidget(
                     image: "assets/images/topselling2.png",
                     nameProducta: "Men's Fleece Pullover ",
-                    price: "100",
-                  ),
+                    price: 1,                  ),
                   Mainwidget(
                     image: "assets/images/topsellingi1.png",
                     nameProducta: "Fleece Pullover Skate",
-                    price: "150.9",
+                    price: 9,
                   ),
                 ],
               ),
@@ -66,12 +65,11 @@ class HoodiesPage extends StatelessWidget {
                   Mainwidget(
                     image: "assets/images/topselling2.png",
                     nameProducta: "Men's Fleece Pullover ",
-                    price: "100",
-                  ),
+                    price:1 ,                  ),
                   Mainwidget(
                     image: "assets/images/topsellingi1.png",
                     nameProducta: "Fleece Pullover Skate",
-                    price: "150.9",
+                    price: 9,
                   ),
                 ],
               ),
@@ -84,12 +82,11 @@ class HoodiesPage extends StatelessWidget {
                   Mainwidget(
                     image: "assets/images/topselling2.png",
                     nameProducta: "Men's Fleece Pullover ",
-                    price: "100",
-                  ),
+                    price: 1,                  ),
                   Mainwidget(
                     image: "assets/images/topsellingi1.png",
                     nameProducta: "Fleece Pullover Skate",
-                    price: "150.9",
+                    price: 9,
                   ),
                 ],
               ),

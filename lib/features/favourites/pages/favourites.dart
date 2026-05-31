@@ -57,7 +57,7 @@ class Favourites extends StatelessWidget {
                   mainAxisSpacing: 20,
                   childAspectRatio: 0.75
                 ),
-                itemBuilder: (context, index) => Mainwidget(image: "assets/images/topselling1_image1.png", nameProducta: "nike full Pack", price: "32.00") ,
+                itemBuilder: (context, index) => Mainwidget(image: "assets/images/topselling1_image1.png", nameProducta: "nike full Pack", price: 1) ,
               ),
             ),
           ],

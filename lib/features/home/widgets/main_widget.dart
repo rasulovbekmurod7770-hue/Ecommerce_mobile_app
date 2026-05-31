@@ -1,5 +1,7 @@
 import 'package:clothing_app_ui/core/constants/app_colors.dart';
+import 'package:clothing_app_ui/features/product%20page/model/products_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Mainwidget extends StatefulWidget {
   Mainwidget({
@@ -11,21 +13,23 @@ class Mainwidget extends StatefulWidget {
 
   String image;
   String nameProducta;
-  String price;
+  double price;
 
   @override
   State<Mainwidget> createState() => _MainwidgetState();
 }
 
 class _MainwidgetState extends State<Mainwidget> {
-
   bool onPressed = true;
 
-  void onpressed (){
+  void onpressed() {
     setState(() {
       onPressed = !onPressed;
     });
   }
+
+  
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -41,11 +45,22 @@ class _MainwidgetState extends State<Mainwidget> {
             height: 220,
             decoration: BoxDecoration(
               borderRadius: .circular(8),
-              image: DecorationImage(fit: .cover, image: AssetImage(widget.image)),
+              image: DecorationImage(
+                fit: .cover,
+                image: AssetImage(widget.image),
+              ),
             ),
             child: Column(
               crossAxisAlignment: .end,
-              children: [IconButton(onPressed: onpressed, icon: Icon(onPressed ? Icons.favorite_outline : Icons.favorite, color: onPressed ? Colors.black : Colors.red, ))],
+              children: [
+                IconButton(
+                  onPressed: onpressed,
+                  icon: Icon(
+                    onPressed ? Icons.favorite_outline : Icons.favorite,
+                    color: onPressed ? Colors.black : Colors.red,
+                  ),
+                ),
+              ],
             ),
           ),
           const SizedBox(height: 8),
