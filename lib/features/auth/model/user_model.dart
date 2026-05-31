@@ -46,17 +46,16 @@ class UserModel {
 
   Map<String, dynamic> toJson() {
     return {
-      if (id != null) 'id': id,
-      if (firstName != null) 'first_name': firstName,
-      if (lastName != null) 'last_name': lastName,
-      if (email != null) 'email': email,
-      if (phone != null) 'phone': phone,
-      if (imageUrl != null) 'image_url': imageUrl,
-      if (gender != null) 'gender': gender,
-      if (age != null) 'age': age,
-      if (addresses != null)
-        'addresses': addresses!.map((e) => e.toJson()).toList(),
-      if (cards != null) 'cards': cards!.map((e) => e.toJson()).toList(),
+      'id': id,
+      'first_name': firstName,
+      'last_name': lastName,
+      'email': email,
+      'phone': phone,
+      'image_url': imageUrl,
+      'gender': gender,
+      'age': age,
+      'addresses': addresses.map((e) => e.toJson()).toList(),
+      'cards': cards.map((e) => e.toJson()).toList(),
     };
   }
 }

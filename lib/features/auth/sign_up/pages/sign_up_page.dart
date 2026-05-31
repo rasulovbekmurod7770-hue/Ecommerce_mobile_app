@@ -3,12 +3,12 @@ import 'package:clothing_app_ui/core/constants/app_text_styles.dart';
 import 'package:clothing_app_ui/features/auth/sign_up/cubit/sign_up_cubit.dart';
 import 'package:clothing_app_ui/features/auth/sign_up/cubit/sign_up_state.dart';
 import 'package:clothing_app_ui/features/auth/sign_up/models/sign_up_model.dart';
-import 'package:clothing_app_ui/features/auth/sign_in/pages/sign_in_page.dart';
+import 'package:clothing_app_ui/features/auth/tell_us_abt_yourelf/cubit/user_cubit.dart';
+import 'package:clothing_app_ui/features/auth/tell_us_abt_yourelf/pages/tell_us_abt_yourself.dart';
 import 'package:clothing_app_ui/features/auth/widgets/main_button.dart';
 import 'package:clothing_app_ui/features/auth/widgets/text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:provider/provider.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -94,7 +94,14 @@ class _SignUpPageState extends State<SignUpPage> {
                     context.read<SignUpCubit>().createUser(newuser);
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const SignInPage()),
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return BlocProvider(
+                            create: (context) => UserCubit(),
+                            child: const TellUsAbtYourself(userId: 10),
+                          );
+                        },
+                      ),
                     );
                   },
                 ),
@@ -127,7 +134,7 @@ class _SignUpPageState extends State<SignUpPage> {
               ],
             ),
           );
-        }
+        },
       ),
     );
   }

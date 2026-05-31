@@ -4,7 +4,7 @@ import 'package:clothing_app_ui/features/auth/model/auth_token_model.dart';
 import 'package:clothing_app_ui/features/auth/sign_in/models/sign_in_model.dart';
 import 'package:clothing_app_ui/features/auth/sign_up/models/sign_up_model.dart';
 import 'package:clothing_app_ui/features/auth/sign_up/models/user_dto.dart';
-import 'package:clothing_app_ui/features/auth/tell_us_abt_yourelf/model/user_model.dart';
+import 'package:clothing_app_ui/features/auth/model/user_model.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:http/http.dart' as http;
 

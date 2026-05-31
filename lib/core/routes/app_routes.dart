@@ -1,10 +1,13 @@
 import 'package:clothing_app_ui/core/routes/app_pages.dart';
+import 'package:clothing_app_ui/core/widgets/splash_router.dart';
 import 'package:clothing_app_ui/features/auth/repo/auth_repo.dart';
 import 'package:clothing_app_ui/features/auth/sign_in/cubit/sign_in_cubit.dart';
 import 'package:clothing_app_ui/features/auth/sign_up/cubit/sign_up_cubit.dart';
+import 'package:clothing_app_ui/features/auth/sign_up/pages/sign_up_page.dart';
+import 'package:clothing_app_ui/features/auth/tell_us_abt_yourelf/cubit/user_cubit.dart';
+import 'package:clothing_app_ui/features/auth/tell_us_abt_yourelf/pages/tell_us_abt_yourself.dart';
 // import 'package:clothing_app_ui/features/auth/sign_up/repo/auth_repo.dart';
 import 'package:clothing_app_ui/features/home/main/main_screen.dart';
-import 'package:clothing_app_ui/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -34,7 +37,26 @@ class RouteGenerator {
             );
           },
         );
-
+      case AppPages.tellUs:
+        final userId = args as int;
+        return MaterialPageRoute(
+          builder: (context) {
+            return BlocProvider(
+              create: (context) => UserCubit(),
+              child: TellUsAbtYourself(userId: userId),
+            );
+          },
+        );
+      case AppPages.signUp:
+        // final userId = args as int;R
+        return MaterialPageRoute(
+          builder: (context) {
+            return BlocProvider(
+              create: (context) => SignUpCubit(),
+              child: const SignUpPage(), 
+            );
+          },
+        );
       default:
         return MaterialPageRoute(
           builder: (context) {
