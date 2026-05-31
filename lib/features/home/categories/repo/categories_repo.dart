@@ -7,16 +7,12 @@ import 'package:http/http.dart' as http;
 class CategoriesRepo {
   Future<List<CategoriesModel>> getCategories() async {
     try {
-      final response = await http.get(
-        Uri.parse("${Api.apiUrl}/categories"),
-        headers: {"Accept": "application/json"},
-      );
+      final response = await http.get(Uri.parse("${Api.apiUrl}/categories"));
       final data = jsonDecode(response.body);
-      if (response.statusCode != 200 && response.statusCode != 201) {
-        print("201 or 200");
-        throw data.toString();
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        return (data as List).map((e) => CategoriesModel.fromJson(e)).toList();
       }
-      return (data as List).map((e) => CategoriesModel.fromJson(e)).toList();
+      throw data.toString();
     } catch (e) {
       rethrow;
     }

@@ -6,6 +6,7 @@ import 'package:clothing_app_ui/features/auth/sign_up/cubit/sign_up_cubit.dart';
 import 'package:clothing_app_ui/features/auth/sign_up/pages/sign_up_page.dart';
 import 'package:clothing_app_ui/features/auth/tell_us_abt_yourelf/cubit/user_cubit.dart';
 import 'package:clothing_app_ui/features/auth/tell_us_abt_yourelf/pages/tell_us_abt_yourself.dart';
+import 'package:clothing_app_ui/features/home/categories/cubit/categories_cubit.dart';
 import 'package:clothing_app_ui/features/home/cubit/product_cubit.dart';
 // import 'package:clothing_app_ui/features/auth/sign_up/repo/auth_repo.dart';
 import 'package:clothing_app_ui/features/home/main/main_screen.dart';
@@ -21,7 +22,10 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (context) {
             return MultiBlocProvider(
-              providers: [BlocProvider(create: (context) => ProductCubit())],
+              providers: [
+                BlocProvider(create: (context) => CategoriesCubit()),
+                BlocProvider(create: (context) => ProductCubit()),
+              ],
               child: const MainScreen(),
             );
           },

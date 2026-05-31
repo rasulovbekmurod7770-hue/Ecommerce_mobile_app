@@ -1,7 +1,5 @@
 import 'package:clothing_app_ui/core/constants/app_colors.dart';
-import 'package:clothing_app_ui/features/product%20page/model/products_model.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Mainwidget extends StatefulWidget {
   Mainwidget({

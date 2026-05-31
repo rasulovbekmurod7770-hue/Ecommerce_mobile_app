@@ -1,5 +1,7 @@
 import 'package:clothing_app_ui/core/constants/app_colors.dart';
 import 'package:clothing_app_ui/core/widgets/main.textfield.dart';
+import 'package:clothing_app_ui/features/home/categories/cubit/categories_cubit.dart';
+import 'package:clothing_app_ui/features/home/categories/cubit/categories_state.dart';
 import 'package:clothing_app_ui/features/home/categories/pages/categories.dart';
 import 'package:clothing_app_ui/features/home/cubit/product_cubit.dart';
 import 'package:clothing_app_ui/features/home/cubit/product_state.dart';
@@ -21,6 +23,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     context.read<ProductCubit>().getProducts();
+    context.read<CategoriesCubit>().getCatergories();
     super.initState();
   }
 
@@ -96,36 +99,32 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             const SizedBox(height: 16),
-            Padding(
-              padding: const .only(left: 24),
-              child: SingleChildScrollView(
-                scrollDirection: .horizontal,
-                child: Row(
-                  spacing: 13.25,
-                  crossAxisAlignment: .start,
-                  children: [
-                    CircleAvatarW(
-                      image: "assets/images/categoryimage1.png",
-                      text: "Hoodies",
-                    ),
-                    CircleAvatarW(
-                      image: "assets/images/categoryimage2.png",
-                      text: "Shorts",
-                    ),
-                    CircleAvatarW(
-                      image: "assets/images/categorimage3.png",
-                      text: "Shoes",
-                    ),
-                    CircleAvatarW(
-                      image: "assets/images/categoryimage4.png",
-                      text: "Bag",
-                    ),
-                    CircleAvatarW(
-                      image: "assets/images/gategoryimage5.png",
-                      text: "Accessories",
-                    ),
-                  ],
-                ),
+            SizedBox(
+              height: 100,
+              child: BlocBuilder<CategoriesCubit, CategoriesState>(
+                builder: (context, state) {
+                  if (state is CategoriesLoading) {
+                    return const Center(child: CircularProgressIndicator());
+                  } else if (state is CategoriesError) {
+                    return Center(child: Text(state.message));
+                  } else if (state is CategoriesLoaded) {
+                    return ListView.separated(
+                      padding: const EdgeInsets.only(left: 24),
+                      scrollDirection: Axis.horizontal,
+                      itemCount: state.categories.length,
+                      separatorBuilder: (context, index) =>
+                          const SizedBox(width: 12),
+                      itemBuilder: (context, index) {
+                        final category = state.categories[index];
+                        return CircleAvatarW(
+                          image: category.imageUrl,
+                          text: category.name,
+                        );
+                      },
+                    );
+                  }
+                  return const SizedBox();
+                },
               ),
             ),
             const SizedBox(height: 24),

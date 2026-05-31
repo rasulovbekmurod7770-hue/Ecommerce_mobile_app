@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class CategoriesCubit extends Cubit<CategoriesState>{
   CategoriesCubit() : super(CategoriesInitial());
 
-   Future<void> getUsers() async {
+   Future<void> getCatergories() async {
     emit(CategoriesLoading());
     try {
       final categories = await CategoriesRepo().getCategories();

@@ -18,7 +18,7 @@ class Categories extends StatefulWidget {
 class _CategoriesState extends State<Categories> {
   @override
   void initState() {
-    context.read<CategoriesCubit>().getUsers();
+    context.read<CategoriesCubit>().getCatergories();
     super.initState();
   }
 
