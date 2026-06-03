@@ -3,12 +3,15 @@ import 'package:clothing_app_ui/core/constants/app_text_styles.dart';
 import 'package:clothing_app_ui/features/auth/widgets/main_button.dart';
 import 'package:clothing_app_ui/features/home/widgets/padding.dart';
 import 'package:clothing_app_ui/features/product%20page/cubit/products_cubit.dart';
+import 'package:clothing_app_ui/features/product%20page/model/products_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
-  const ProductDetailsScreen({super.key});
+  const ProductDetailsScreen({super.key, required this.product});
+
+  final ProductModel product;
 
   @override
   State<ProductDetailsScreen> createState() => _ProductDetailsScreenState();
@@ -37,7 +40,6 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
 
   @override
   void initState() {
-    context.read<ProductsCubit>().getProducts();
 
     super.initState();
   }
@@ -93,7 +95,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 ],
               ),
               const SizedBox(height: 24),
-              const SizedBox(
+               SizedBox(
                 height: 248,
                 child: SingleChildScrollView(
                   scrollDirection: .horizontal,
@@ -103,36 +105,30 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                       Image(
                         width: 161,
                         height: 248,
-                        image: AssetImage(
-                          "assets/images/topselling1_image1.png",
-                        ),
+                        image: NetworkImage(widget.product.images.first),
                       ),
                       Image(
                         width: 161,
                         height: 248,
-                        image: AssetImage(
-                          "assets/images/topselling1_image2.png",
-                        ),
+                        image: NetworkImage(widget.product.images.first),
                       ),
                       Image(
                         width: 161,
                         height: 248,
                         fit: .fitHeight,
-                        image: AssetImage(
-                          "assets/images/topselling1_image3.png",
-                        ),
+                        image: NetworkImage(widget.product.images.last),
                       ),
                     ],
                   ),
                 ),
               ),
               const SizedBox(height: 24),
-              const Text(
-                "Men's Harrington Jacket",
+               Text(
+                widget.product.name,
                 style: AppTextStyles.nameOfProduct,
               ),
               const SizedBox(height: 15),
-              const Text("\$148", style: AppTextStyles.priceOfProduct),
+               Text("\$${widget.product.price}", style: AppTextStyles.priceOfProduct),
               const SizedBox(height: 33),
               Container(
                 padding: const .only(left: 16),
@@ -222,7 +218,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                               mainAxisAlignment: .spaceBetween,
                                               children: [
                                                 Text(
-                                                  sizes[0],
+                                                  widget.product.sizes[0],
                                                   style: const TextStyle(
                                                     fontSize: 16,
                                                     fontWeight: .w500,
@@ -261,47 +257,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                               mainAxisAlignment: .spaceBetween,
                                               children: [
                                                 Text(
-                                                  sizes[1],
-                                                  style: const TextStyle(
-                                                    fontSize: 16,
-                                                    fontWeight: .w500,
-                                                    color: AppColors.colorBlack,
-                                                  ),
-                                                ),
-                                                const Icon(
-                                                  Icons.check,
-                                                  color: AppColors.colorBlack,
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                        const SizedBox(height: 16),
-
-                                        InkWell(
-                                          borderRadius: .circular(100),
-                                          onTap: () {
-                                            setState(() {
-                                              ontapped = !ontapped;
-                                            });
-                                          },
-                                          child: Container(
-                                            padding: const .symmetric(
-                                              horizontal: 16,
-                                            ),
-                                            width: .infinity,
-                                            height: 56,
-                                            decoration: BoxDecoration(
-                                              borderRadius: .circular(100),
-                                              color: ontapped
-                                                  ? AppColors.secondaryColor
-                                                  : AppColors.primaryColor,
-                                            ),
-                                            child: Row(
-                                              mainAxisAlignment: .spaceBetween,
-                                              children: [
-                                                Text(
-                                                  sizes[2],
+                                                  widget.product.sizes[1],
                                                   style: const TextStyle(
                                                     fontSize: 16,
                                                     fontWeight: .w500,
@@ -341,7 +297,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                               mainAxisAlignment: .spaceBetween,
                                               children: [
                                                 Text(
-                                                  sizes[3],
+                                                  widget.product.sizes[2],
                                                   style: const TextStyle(
                                                     fontSize: 16,
                                                     fontWeight: .w500,
@@ -381,7 +337,47 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                               mainAxisAlignment: .spaceBetween,
                                               children: [
                                                 Text(
-                                                  sizes[4],
+                                                  widget.product.sizes[3],
+                                                  style: const TextStyle(
+                                                    fontSize: 16,
+                                                    fontWeight: .w500,
+                                                    color: AppColors.colorBlack,
+                                                  ),
+                                                ),
+                                                const Icon(
+                                                  Icons.check,
+                                                  color: AppColors.colorBlack,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                        const SizedBox(height: 16),
+
+                                        InkWell(
+                                          borderRadius: .circular(100),
+                                          onTap: () {
+                                            setState(() {
+                                              ontapped = !ontapped;
+                                            });
+                                          },
+                                          child: Container(
+                                            padding: const .symmetric(
+                                              horizontal: 16,
+                                            ),
+                                            width: .infinity,
+                                            height: 56,
+                                            decoration: BoxDecoration(
+                                              borderRadius: .circular(100),
+                                              color: ontapped
+                                                  ? AppColors.secondaryColor
+                                                  : AppColors.primaryColor,
+                                            ),
+                                            child: Row(
+                                              mainAxisAlignment: .spaceBetween,
+                                              children: [
+                                                Text(
+                                                  widget.product.sizes[4],
                                                   style: const TextStyle(
                                                     fontSize: 16,
                                                     fontWeight: .w500,
@@ -502,7 +498,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                               mainAxisAlignment: .spaceBetween,
                                               children: [
                                                 Text(
-                                                  keys[0],
+                                                  widget.product.sizes[0],
                                                   style: const TextStyle(
                                                     fontSize: 16,
                                                     fontWeight: .w500,
@@ -541,7 +537,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                               mainAxisAlignment: .spaceBetween,
                                               children: [
                                                 Text(
-                                                  keys[1],
+                                                  widget.product.sizes[1],
                                                   style: const TextStyle(
                                                     fontSize: 16,
                                                     fontWeight: .w500,
@@ -581,7 +577,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                               mainAxisAlignment: .spaceBetween,
                                               children: [
                                                 Text(
-                                                  keys[2],
+                                                  widget.product.sizes[2],
                                                   style: const TextStyle(
                                                     fontSize: 16,
                                                     fontWeight: .w500,
@@ -621,7 +617,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                               mainAxisAlignment: .spaceBetween,
                                               children: [
                                                 Text(
-                                                  keys[3],
+                                                  widget.product.sizes[3],
                                                   style: const TextStyle(
                                                     fontSize: 16,
                                                     fontWeight: .w500,
@@ -703,7 +699,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                   mainAxisAlignment: .spaceBetween,
                   children: [
                     const Text(
-                      "Color",
+                      "Quantity",
                       style: AppTextStyles.secondaryTextBlack,
                     ),
                     Row(

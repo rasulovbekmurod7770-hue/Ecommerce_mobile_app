@@ -1,5 +1,8 @@
 import 'package:clothing_app_ui/core/constants/app_colors.dart';
+import 'package:clothing_app_ui/core/routes/app_pages.dart';
+import 'package:clothing_app_ui/features/product%20page/model/products_model.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Mainwidget extends StatefulWidget {
   Mainwidget({
@@ -7,6 +10,7 @@ class Mainwidget extends StatefulWidget {
     required this.image,
     required this.nameProducta,
     required this.price,
+    
   });
 
   String image;
@@ -22,11 +26,10 @@ class _MainwidgetState extends State<Mainwidget> {
 
   void onpressed() {
     setState(() {
+      context.watch<ProductModel>().isWishlisted = !context.watch<ProductModel>().isWishlisted;
       onPressed = !onPressed;
     });
   }
-
-  
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +48,7 @@ class _MainwidgetState extends State<Mainwidget> {
               borderRadius: .circular(8),
               image: DecorationImage(
                 fit: .cover,
-                image: AssetImage(widget.image),
+                image: NetworkImage(widget.image),
               ),
             ),
             child: Column(

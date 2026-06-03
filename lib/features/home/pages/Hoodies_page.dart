@@ -1,10 +1,24 @@
 import 'package:clothing_app_ui/core/constants/app_colors.dart';
+import 'package:clothing_app_ui/features/home/cubit/product_cubit.dart';
+import 'package:clothing_app_ui/features/home/cubit/product_state.dart';
 import 'package:clothing_app_ui/features/home/widgets/main_widget.dart';
 import 'package:clothing_app_ui/features/home/widgets/padding.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-class HoodiesPage extends StatelessWidget {
+class HoodiesPage extends StatefulWidget {
   const HoodiesPage({super.key});
+
+  @override
+  State<HoodiesPage> createState() => _HoodiesPageState();
+}
+
+class _HoodiesPageState extends State<HoodiesPage> {
+  @override
+  void initState() {
+    context.read<ProductCubit>().getProducts();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +47,7 @@ class HoodiesPage extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               const Text(
-                "Hoodies (240)",
+                "Hoodies",
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 16,
@@ -41,54 +55,35 @@ class HoodiesPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 23),
-              Row(
-                mainAxisAlignment: .spaceBetween,
-                // spacing: 20,
-                children: [
-                  Mainwidget(
-                    image: "assets/images/topselling2.png",
-                    nameProducta: "Men's Fleece Pullover ",
-                    price: 1,                  ),
-                  Mainwidget(
-                    image: "assets/images/topsellingi1.png",
-                    nameProducta: "Fleece Pullover Skate",
-                    price: 9,
-                  ),
-                ],
-              ),
-              const SizedBox(height: 20),
-
-              Row(
-                mainAxisAlignment: .spaceBetween,
-                // spacing: 20,
-                children: [
-                  Mainwidget(
-                    image: "assets/images/topselling2.png",
-                    nameProducta: "Men's Fleece Pullover ",
-                    price:1 ,                  ),
-                  Mainwidget(
-                    image: "assets/images/topsellingi1.png",
-                    nameProducta: "Fleece Pullover Skate",
-                    price: 9,
-                  ),
-                ],
-              ),
-              const SizedBox(height: 20),
-
-              Row(
-                mainAxisAlignment: .spaceBetween,
-                // spacing: 20,
-                children: [
-                  Mainwidget(
-                    image: "assets/images/topselling2.png",
-                    nameProducta: "Men's Fleece Pullover ",
-                    price: 1,                  ),
-                  Mainwidget(
-                    image: "assets/images/topsellingi1.png",
-                    nameProducta: "Fleece Pullover Skate",
-                    price: 9,
-                  ),
-                ],
+              SizedBox(
+                height: 2000,
+                child: BlocBuilder<ProductCubit, ProductState>(
+                  builder: (context, state) {
+                    if (state is ProductsLoaded) {
+                      return GridView.builder(
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
+                              crossAxisSpacing: 20,
+                              mainAxisSpacing: 20,
+                              mainAxisExtent: 287,
+                              
+                            ),
+                        itemCount: state.products.length,
+                        itemBuilder: (context, index) {
+                          final product = state.products[index];
+                          return Mainwidget(
+                            
+                            image: product.images[0],
+                            nameProducta: product.name,
+                            price: product.price,
+                          );
+                        },
+                      );
+                    }
+                    return const Center(child: CircularProgressIndicator());
+                  },
+                ),
               ),
             ],
           ),

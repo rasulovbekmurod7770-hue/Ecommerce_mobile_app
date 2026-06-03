@@ -1,4 +1,5 @@
 import 'package:clothing_app_ui/core/constants/app_colors.dart';
+import 'package:clothing_app_ui/core/routes/app_pages.dart';
 import 'package:clothing_app_ui/core/widgets/main.textfield.dart';
 import 'package:clothing_app_ui/features/home/categories/cubit/categories_cubit.dart';
 import 'package:clothing_app_ui/features/home/categories/cubit/categories_state.dart';
@@ -9,6 +10,7 @@ import 'package:clothing_app_ui/features/home/widgets/circleavatarw.dart';
 import 'package:clothing_app_ui/features/home/widgets/main_widget.dart';
 import 'package:clothing_app_ui/features/home/widgets/padding.dart';
 import 'package:clothing_app_ui/features/home/widgets/texts.dart';
+import 'package:clothing_app_ui/features/profile/widgets/inkwell_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -153,12 +155,21 @@ class _HomePageState extends State<HomePage> {
                           const SizedBox(width: 12),
                       itemBuilder: (context, index) {
                         final product = state.products[index];
-                        return Mainwidget(
-                          image: product.images.isNotEmpty
-                              ? product.images[0]
-                              : '',
-                          nameProducta: product.name,
-                          price: product.price,
+                        return InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(
+                              context,
+                              AppPages.productDetails,
+                              arguments: product,
+                            );
+                          },
+                          child: Mainwidget(
+                            image: product.images.isNotEmpty
+                                ? product.images[0]
+                                : '',
+                            nameProducta: product.name,
+                            price: product.price,
+                          ),
                         );
                       },
                     );

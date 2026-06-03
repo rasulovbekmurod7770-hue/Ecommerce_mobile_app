@@ -11,7 +11,7 @@ class ProductModel {
   final List<String> images;
   final List<ReviewModel> reviews;
   final int categoryId;
-  final bool? isWishlisted;
+   bool isWishlisted;
 
   ProductModel({
     required this.id,
@@ -26,7 +26,8 @@ class ProductModel {
     required this.images,
     required this.reviews,
     required this.categoryId,
-    this.isWishlisted,
+
+    required this.isWishlisted,
   });
 
   factory ProductModel.fromJson(Map<String, dynamic> json) {
@@ -45,7 +46,7 @@ class ProductModel {
           .map((e) => ReviewModel.fromJson(e))
           .toList(),
       categoryId: json['category_id'] is num ? (json['category_id'] as num).toInt() : 0,
-      isWishlisted: json['is_wishlisted'],
+      isWishlisted: json['is_wishlisted'] ?? false,
     );
   }
 
